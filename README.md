@@ -17,15 +17,19 @@ src/
   games.ts              the list of games (name, type, description, facts) — edit this to add or change games
   useHashGame.ts        keeps the open game in the URL (#bingo90) so games can be linked to directly
   components/
-    Marquee.tsx         header with the chasing bulbs
-    Featured.tsx        the spotlight game at the top
+    Logo.tsx            the Bingo Lounge mark
+    Sidebar.tsx         left menu (and the bottom bar on phones)
+    TopBar.tsx          welcome message, balance, player
+    Hero.tsx            the banner carousel
     Filters.tsx         All / Live draw / Instant / Hybrid
-    GameCard.tsx        one game tile
+    GameCard.tsx        a game poster tile, and the Bigger Jackpots tile
+    Pages.tsx           My Cards, Promotions, Help, Settings
     GameStage.tsx       full-screen player with Lobby / previous / next
   styles.css
 public/
   games/<id>.html       each game as one self-contained file (built from games-src/)
-  thumbs/<id>.jpg       lobby screenshots
+  img/hero-new-player.webp   the first banner
+  img/posters/<id>.webp      game posters (WebP, 900px wide)
 games-src/              the full React + TypeScript source of every game
   scratch-bingo  flip-bingo  reel-bingo  deal-bingo  quick-bingo  bingo35  bingo90
 scripts/
@@ -41,7 +45,7 @@ Each game is its own React app with its own state, styles and sounds, so the lob
 3. `npm run dev` and open the lobby.
 
 ## Adding a game
-Put its source in `games-src/<id>/`, run `npm run build:games -- <id>`, add a screenshot as `public/thumbs/<id>.jpg`, and add an entry to `GAMES` in `src/games.ts`.
+Put its source in `games-src/<id>/`, run `npm run build:games -- <id>`, add a poster as `public/img/posters/<id>.webp` (convert PNG with `cwebp -q 80 -resize 900 0 in.png -o out.webp`), and add an entry with `poster: true` to `GAMES` in `src/games.ts`. Banners for the carousel are listed in `src/components/Hero.tsx`.
 
 ## Notes
 - Every game keeps its own practice balance; there is no shared wallet, login or backend connection yet. `QuickBingo_Backend` is not included here.
