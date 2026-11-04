@@ -174,13 +174,13 @@ img{display:block;max-width:100%}
 .foot .age{width:28px;height:28px;font-size:11px;margin-right:6px;vertical-align:middle}
 
 /* ---- the game, full screen ---- */
-.stage{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;background:var(--bg)}
+.stage{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;background:var(--bg);padding-bottom:env(safe-area-inset-bottom,0px)}
 .stage header{display:flex;align-items:center;gap:12px;padding:8px max(12px,env(safe-area-inset-right,0px)) 8px max(12px,env(safe-area-inset-left,0px));padding-top:calc(8px + env(safe-area-inset-top,0px));background:var(--bg2);box-shadow:0 1px 0 var(--line)}
 .back{display:inline-flex;align-items:center;gap:4px;padding:7px 14px;border-radius:999px;font-weight:700;color:var(--gold-ink);background:linear-gradient(180deg,#ffd84a,var(--gold2))}
 .stage b{font:800 20px/1 var(--display);color:var(--gold);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .switch{margin-left:auto;display:flex;gap:6px}
 .switch button{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--panel);box-shadow:inset 0 0 0 1.5px var(--line)}
-.stage iframe{flex:1;width:100%;border:0;background:#000}
+.stage iframe{flex:1;min-height:0;width:100%;border:0;background:#000}
 
 /* ---- phone bottom bar ---- */
 .bottom-nav{display:none}
