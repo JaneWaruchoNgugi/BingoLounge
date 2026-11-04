@@ -199,5 +199,19 @@ body{background:#030a1c}
 @media (max-width:599px){
 .arena.playing .hero{height:calc(var(--hh)*.87)!important;aspect-ratio:auto!important}
 }
+
+/* desktop: when the window is wide and short the arena is narrower than the
+   window, but its children inherited a font sized from the full window width
+   (cqw on the container itself resolves against the viewport). That made the
+   left stake panel taller than its slot so it ran over the cards panel.
+   Size children from the arena instead. */
+@media (min-width:900px){
+:where(.arena>*){font-size:calc(14*var(--u))}
+.arena{font-size:calc(14px*min(100vw,100svh*1600/901)/1600)}
+.topbar .tlogo{visibility:hidden}
+}
+@media (min-width:900px){
+.arena:not(.playing) .tkp{top:50.6%!important;height:48.2%!important}
+}
 </style>
 </head><body><div id="root"></div></body></html>
