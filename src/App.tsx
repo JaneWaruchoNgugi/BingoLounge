@@ -8,10 +8,13 @@ import { Hero } from './components/Hero'
 import { Filters, type Filter } from './components/Filters'
 import { GameCard } from './components/GameCard'
 import { GameStage } from './components/GameStage'
+import { TourModal } from './components/TourModal'
 import { Help, MyCards, Preferences, Promotions } from './components/Pages'
 
 export default function App() {
   const [filter, setFilter] = useState<Filter>('all')
+  const [learning, setLearning] = useState<string | null>(null)
+  const learnGame = GAMES.find(g => g.id === learning)
   const { page, game, go } = useHashRoute()
   const shown = GAMES.filter(g => filter === 'all' || g.kind === filter)
   const current = GAMES.find(g => g.id === game)
@@ -38,7 +41,7 @@ export default function App() {
               </div>
               <div className="grid">
                 {shown.map(g => (
-                  <GameCard key={g.id} game={g} onPlay={go} />
+                  <GameCard key={g.id} game={g} onPlay={go} onLearn={setLearning} />
                 ))}
               </div>
             </section>
@@ -46,7 +49,7 @@ export default function App() {
         )}
         {page === 'promotions' && <Promotions go={go} />}
         {page === 'my-cards' && <MyCards go={go} />}
-        {page === 'help' && <Help />}
+        {page === 'help' && <Help onLearn={setLearning} />}
         {page === 'preferences' && <Preferences />}
         <footer className="foot">
           <span>
@@ -55,6 +58,16 @@ export default function App() {
         </footer>
       </div>
       <BottomNav page={page} go={go} />
+      {learnGame && !current && (
+        <TourModal
+          game={learnGame}
+          onClose={() => setLearning(null)}
+          onPlay={() => {
+            setLearning(null)
+            go(learnGame.id)
+          }}
+        />
+      )}
       {current && <GameStage game={current} onClose={() => go(null)} onStep={step} />}
     </div>
   )

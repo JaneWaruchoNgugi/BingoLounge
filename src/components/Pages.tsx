@@ -1,4 +1,4 @@
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, CircleHelp } from 'lucide-react'
 import { GAMES, KIND_LABEL, imgUrl } from '../games'
 
 /** Promotions: the new player offer and what is coming. */
@@ -49,7 +49,7 @@ export function MyCards({ go }: { go: (h: string | null) => void }) {
 }
 
 /** Help: one line per game on how it plays. */
-export function Help() {
+export function Help({ onLearn }: { onLearn: (id: string) => void }) {
   return (
     <section className="page">
       <h2>Help</h2>
@@ -60,6 +60,9 @@ export function Help() {
             <dt>{g.name}</dt>
             <dd>
               {g.blurb} <span>{g.facts.join(' · ')}</span>
+              <button className="htp-card" onClick={() => onLearn(g.id)}>
+                <CircleHelp aria-hidden="true" /> Take the {g.name} tour
+              </button>
             </dd>
           </div>
         ))}
