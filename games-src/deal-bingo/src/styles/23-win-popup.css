@@ -1,0 +1,43 @@
+/*
+ * BINGO35 win popup: a dark emerald card framed in gold, serif gold BINGO, a dark green ribbon,
+ * gold-ringed numbers and gold prize panels, to match the Emerald Crown theme.
+ */
+.bingo{background:radial-gradient(circle at 50% 42%,#0b162af0,#010604f5 72%)!important}
+.lwcard{border:2px solid #0000!important;background:radial-gradient(ellipse at 50% 0,#142a51 0,#0000 55%) padding-box,linear-gradient(180deg,#0a1322,#040912 60%,#02050a) padding-box,linear-gradient(180deg,#c8e2ef,#639fbd 30%,#2d596f 70%,#639fbd) border-box!important;box-shadow:0 0 0 1px #000,0 0 0 5px #080d16,0 0 0 6px #6795ac88,0 24px 60px #000e,0 0 50px #639fbd33!important}
+.lwcup .tr{color:#98c5dc!important;fill:#639fbd44!important;filter:drop-shadow(0 0 10px #639fbd) drop-shadow(0 3px 0 #1a3948)!important}
+.lwcup .st{color:#c8e2ef!important;fill:#7cb5d1!important}
+.lwbingo{font-family:var(--crown)!important;font-weight:900!important;letter-spacing:.04em!important;background:linear-gradient(180deg,#dbecf4 10%,#8fbed6 42%,#4f88a5 68%,#2d596f 92%)!important;-webkit-background-clip:text!important;background-clip:text!important;filter:drop-shadow(0 3px 0 #0c1a21) drop-shadow(0 0 16px #639fbd66)!important}
+.lwribbon{border:2px solid #639fbd!important;background:linear-gradient(180deg,#143060,#0a1c3b 60%,#06132a)!important;box-shadow:0 6px 18px #000c,inset 0 1px 0 #ffffff22!important}
+.lwribbon::before,.lwribbon::after{background:linear-gradient(180deg,#0d234a,#051023)!important;border:2px solid #5a879d!important}
+.lwribbon span{color:#e4f1f7!important;text-shadow:0 2px 0 #020b1a,0 0 14px #7cb5d166!important}
+.lwwhich .lbl{color:#98afbb!important}
+.lwwhich .tab{background:#060c15!important;border-color:#6795ac55!important;color:#9fb3a7!important}
+.lwwhich .tab.on{background:linear-gradient(180deg,#a3cbdf,#639fbd 55%,#447b97)!important;border-color:#c8e2ef!important;color:#0a1921!important;box-shadow:0 0 0 2px #639fbd44,0 0 14px #639fbd88!important}
+.lwwhich .price{color:#98c5dc!important}
+.lwgrid{border:2px solid #6795ac!important;background:linear-gradient(180deg,#070e1a,#03070d)!important;box-shadow:inset 0 0 18px #000c,0 0 16px #639fbd22!important}
+.lwh{text-shadow:0 1px 0 #0006!important;box-shadow:inset 0 1px 0 #ffffff44,0 2px 6px #0008!important}
+.lwh.h0{background:linear-gradient(#4f8dff,#1f5fd6)!important}
+.lwh.h1{background:linear-gradient(#ff5a6a,#c81e36)!important}
+.lwh.h2{background:linear-gradient(#98c5dc,#4f88a5)!important;color:#0a1921!important;text-shadow:none!important}
+.lwh.h3{background:linear-gradient(#4a80de,#164aa3)!important}
+.lwh.h4{background:linear-gradient(#346ed3,#0f3c8a)!important}
+.lwgrid i{color:#cfd6e3!important;background:radial-gradient(circle at 50% 35%,#101e36,#060d18)!important;box-shadow:inset 0 0 0 1px #6795ac44!important}
+.lwgrid i.m{color:var(--c)!important;background:radial-gradient(circle,#fffdf5 0 58%,#d9e3e8 66%)!important;box-shadow:0 0 0 3px var(--c),0 0 10px var(--c)!important}
+.lwgrid i.f{color:#98c5dc!important}
+.lwgrid i.w{color:#10242e!important;background:radial-gradient(circle at 50% 38%,#ecf5f9,#98c5dc 55%,#5f99b6)!important;box-shadow:0 0 0 3px #639fbd,0 0 14px #7cb5d1!important}
+.lwprize{border:2px solid #6795ac!important;background:radial-gradient(ellipse at 50% 0,#142a51,#0000 70%),linear-gradient(180deg,#0a1322,#040912)!important;box-shadow:inset 0 0 22px #000a,0 0 18px #639fbd33!important}
+.lwpill,.lwchip{background:linear-gradient(180deg,#a3cbdf,#639fbd 55%,#447b97)!important;color:#0a1921!important;box-shadow:0 3px 10px #000a!important}
+.lwpv b{background:linear-gradient(180deg,#dbecf4,#8fbed6 45%,#4f88a5)!important;-webkit-background-clip:text!important;background-clip:text!important}
+.lwpv .coin,.lwpv .spk{color:#98c5dc!important}
+.lwtotal{background:#060c15!important;border:1px solid #6795ac66!important}
+.lwtotal span{color:#98afbb!important}
+.lwtotal b{color:#e4f1f7!important}
+.lwxp{background:#060c15!important;border:1px solid #6795ac99!important}
+.lwxp .gain{color:#4a80de!important;border-right-color:#6795ac44!important}
+.lwxp svg{color:#98c5dc!important;fill:#7cb5d1!important}
+.lwxp .row{color:#c9d6dd!important}
+.lwxp .bar{background:#ffffff12!important}
+.lwxp .bar u{background:linear-gradient(90deg,#1f4e9e,#98c5dc)!important;box-shadow:0 0 8px #7cb5d166!important}
+.lwbtn.gold{background:linear-gradient(180deg,#c8e2ef,#6ea8c5 45%,#447b97)!important;color:#0a1921!important;box-shadow:0 4px 0 #254d61,0 12px 24px #000b,inset 0 2px 0 #ffffff88!important}
+.lwbtn.ghost{background:#060c15!important;border:1.5px solid #6795ac!important;color:#e5ecf0!important;box-shadow:none!important}
+.lwpv b{white-space:nowrap;font-size:clamp(36px,11vw,52px)!important}
