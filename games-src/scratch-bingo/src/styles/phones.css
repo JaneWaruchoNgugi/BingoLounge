@@ -1,0 +1,643 @@
+/* ---- phones held upright: header, both cards and all 30 scratch spots on one screen above the bar ---- */
+@media (max-width:640px) and (orientation:portrait) {
+  .app {
+    --H:100vh;
+    --hdr:34px;
+    --gp:8px;
+    --ttl:28px;
+    --lb:30px;
+    --chrome:calc(var(--hdr) + var(--gp) + var(--ttl) + var(--lb) + 190px + env(safe-area-inset-top,0px) + env(safe-area-inset-bottom,0px));
+    --fit:calc((var(--H) - var(--chrome))/10);
+    --sw:calc((100vw - 81px - env(safe-area-inset-left,0px) - env(safe-area-inset-right,0px))/6);
+    --S:max(28px,min(52px,var(--sw),calc(var(--fit)*1.28)));
+    --C:clamp(18px,calc(var(--fit)*.72),30px);
+    padding: calc(6px + env(safe-area-inset-top,0px)) max(10px,env(safe-area-inset-right,0px)) 0 max(10px,env(safe-area-inset-left,0px));
+  }
+  @supports (height:100dvh) {
+    .app {
+      --H:100dvh;
+    }
+  }
+  .app:has(.ticket:not(.two)) {
+    --lb:18px;
+    --C:clamp(20px,calc(var(--fit)*.8),42px);
+    --S:max(28px,min(52px,var(--sw),calc(var(--fit)*1.2)));
+  }
+  header {
+    height: var(--hdr);
+    margin-bottom: var(--gp);
+  }
+  .logo {
+    font-size: clamp(18px,5.6vw,22px);
+  }
+  .snd {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    font-size: 17px;
+  }
+  .bal {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 5px 10px;
+    border-radius: 10px;
+  }
+  .bal small {
+    font-size: 9px;
+  }
+  .bal b {
+    font-size: 14px;
+  }
+  main {
+    gap: 12px;
+  }
+  .ticket {
+    padding: 8px;
+  }
+  .tk-head {
+    height: var(--ttl);
+    padding: 0 2px 6px;
+  }
+  .tk-logo {
+    font-size: 16px;
+  }
+  .tk-price {
+    font-size: 10px;
+    padding: 4px 9px;
+  }
+  .tk-body {
+    gap: 8px;
+    padding-top: 6px;
+  }
+  .lbl {
+    font-size: 10px;
+    line-height: 14px;
+    margin-bottom: 4px;
+  }
+  .ticket.two .tk-cards .lbl {
+    font-size: 9.5px;
+    line-height: 13px;
+    gap: 0 6px;
+  }
+  .chead, .cgrid, .ticket.two .chead, .ticket.two .cgrid {
+    gap: 3px;
+  }
+  .cgrid {
+    margin-top: 3px;
+  }
+  .chead span {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .ticket.two .chead span {
+    font-size: 11px;
+    line-height: 16px;
+  }
+  .cell, .ticket.two .cell {
+    height: var(--C);
+    font-size: clamp(13px,calc(var(--C)*.55),20px);
+  }
+  .cwin {
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .spots {
+    gap: 5px;
+    padding: 6px;
+    justify-items: center;
+    align-content: start;
+  }
+  .spot {
+    width: var(--S);
+    height: var(--S);
+    aspect-ratio: auto;
+  }
+  .spot b, .spot.mine b {
+    font-size: clamp(12px,calc(var(--S)*.38),18px);
+  }
+  .spot small {
+    font-size: clamp(8px,calc(var(--S)*.21),10px);
+  }
+  .coin {
+    width: 46px;
+    height: 46px;
+  }
+  .actions {
+    margin-top: 10px;
+    gap: 6px;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom,0px));
+  }
+  .actions .btn {
+    padding: 11px 16px;
+    font-size: 18px;
+  }
+  .quick button {
+    padding: 4px 2px;
+  }
+  .pickme {
+    padding: 12px 14px;
+  }
+}
+
+/* card picker on phones: the card shrinks with the screen so the slots and buttons stay clear */
+@media (max-width:640px) and (orientation:portrait) and (max-height:760px) {
+  .pk {
+    --H:100vh;
+    gap: 8px;
+    padding: calc(10px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));
+  }
+  @supports (height:100dvh) {
+    .pk {
+      --H:100dvh;
+    }
+  }
+  .pk-track {
+    padding-top: 14px;
+  }
+  .pk-grid span {
+    aspect-ratio: auto;
+    height: clamp(20px,calc((var(--H) - 345px)/5),40px);
+  }
+  .pk-bottom {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .pk-bottom .pk-new {
+    align-self: stretch;
+    padding: 0 12px;
+  }
+  .pk-bottom .btn {
+    flex: 1;
+    min-width: 0;
+    font-size: 17px;
+    padding: 12px 10px;
+  }
+}
+
+@media (max-width:640px) and (orientation:portrait) and (max-height:620px) {
+  .pk-badge {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+  .pk-title b {
+    font-size: 19px;
+  }
+  .pk-title small {
+    font-size: 10.5px;
+    line-height: 1.25;
+  }
+  .pk-x {
+    width: 34px;
+    height: 34px;
+  }
+  .pk-dots {
+    display: none;
+  }
+  .pk-take {
+    padding: 8px 14px;
+  }
+  .pk-slot {
+    padding: 6px 4px;
+  }
+  .pk-band {
+    padding: 6px 54px 6px 10px;
+  }
+  .pk-letters span {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .pk-grid span {
+    height: clamp(18px,calc((var(--H) - 310px)/5),34px);
+    font-size: 16px;
+  }
+}
+
+/* short phones (iPhone SE, or any phone inside the lobby with the browser bars showing) */
+@media (max-width:640px) and (orientation:portrait) and (max-height:620px) {
+  .app {
+    --hdr:30px;
+    --gp:6px;
+    --ttl:0px;
+  }
+  .tk-head {
+    display: none;
+  }
+  .tk-body {
+    padding-top: 0;
+  }
+  .logo {
+    font-size: 18px;
+  }
+  .snd {
+    width: 30px;
+    height: 30px;
+  }
+  .bal {
+    padding: 4px 8px;
+  }
+}
+
+@media (max-width:360px) and (orientation:portrait) {
+  .bal small {
+    display: none;
+  }
+  .hright {
+    gap: 5px;
+  }
+}
+
+@media (max-width:640px) {
+  .app {
+    overflow-x: clip;
+  }
+}
+
+/* ---- phones on their side: scratch area and cards side by side, buttons in a column on the right ---- */
+@media (orientation:landscape) and (max-height:520px) and (max-width:1100px) {
+  .app {
+    --H:100vh;
+    --side:200px;
+    max-width: none;
+    min-height: 0;
+    display: block;
+    --tkh:calc(var(--H) - 54px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px));
+    padding: calc(4px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));
+  }
+  @supports (height:100dvh) {
+    .app {
+      --H:100dvh;
+    }
+  }
+  header {
+    height: 30px;
+    margin-bottom: 6px;
+    gap: 8px;
+  }
+  .logo {
+    font-size: 20px;
+  }
+  .hright {
+    gap: 6px;
+  }
+  .snd {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 16px;
+  }
+  .bal {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 10px;
+  }
+  .bal small {
+    font-size: 9px;
+  }
+  .bal b {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  main {
+    display: block;
+  }
+  .play {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) var(--side);
+    gap: 10px;
+    align-items: start;
+  }
+  .ticket {
+    max-height: var(--tkh);
+    padding: 8px;
+    border-width: 4px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+  .tk-head {
+    display: none;
+  }
+  .tk-body, .ticket.two .tk-body {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
+    gap: 10px;
+    padding-top: 0;
+  }
+  .ticket.two .tk-body {
+    grid-template-columns: minmax(0,1fr) minmax(0,1.1fr);
+  }
+  .bcard {
+    min-width: 0;
+  }
+  .chead, .cgrid {
+    grid-template-columns: repeat(5,minmax(0,1fr));
+  }
+  .tk-cards {
+    order: 1;
+    min-width: 0;
+    justify-content: center;
+  }
+  .ticket.two .tk-cards {
+    flex-direction: row;
+    gap: 8px;
+  }
+  .tk-spots {
+    min-height: 0;
+    container-type: inline-size;
+  }
+  .lbl {
+    font-size: 10px;
+    line-height: 14px;
+    margin-bottom: 4px;
+  }
+  .ticket.two .tk-cards .lbl {
+    font-size: 9px;
+    line-height: 13px;
+    flex-direction: column;
+    gap: 0;
+    white-space: nowrap;
+  }
+  .chead, .cgrid, .ticket.two .chead, .ticket.two .cgrid {
+    gap: 3px;
+  }
+  .cgrid {
+    margin-top: 3px;
+  }
+  .chead span, .ticket.two .chead span {
+    font-size: 12px;
+    line-height: 17px;
+    border-radius: 5px;
+  }
+  .cell, .ticket.two .cell {
+    aspect-ratio: auto;
+    height: clamp(18px,calc((var(--tkh) - 120px)/5),34px);
+    font-size: clamp(12px,calc((var(--tkh) - 120px)/9),18px);
+    border-radius: 6px;
+  }
+  .cwin {
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .spots {
+    flex: none;
+    gap: 5px;
+    padding: 6px;
+    justify-items: center;
+    align-content: start;
+    border-radius: 12px;
+    --S:max(24px,min(calc((100cqw - 37px)/6),calc((var(--tkh) - 64px)/5)));
+  }
+  .spot {
+    width: var(--S);
+    height: var(--S);
+    aspect-ratio: auto;
+  }
+  .spot b, .spot.mine b {
+    font-size: clamp(12px,calc(var(--S)*.38),20px);
+  }
+  .spot small {
+    font-size: clamp(8px,calc(var(--S)*.21),11px);
+  }
+  .coin {
+    width: 46px;
+    height: 46px;
+  }
+  .actions {
+    grid-column: 2;
+    grid-row: 1;
+    position: sticky;
+    top: 6px;
+    margin: 0;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: 8px;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .actions .btn {
+    justify-content: center;
+    padding: 12px 10px;
+    font-size: 17px;
+    border-radius: 999px;
+  }
+  .mres {
+    padding: 8px 10px;
+    border-radius: 12px;
+  }
+  .mres b {
+    font-size: 19px;
+  }
+  .mres small {
+    font-size: 11.5px;
+  }
+  .cnt {
+    gap: 6px;
+  }
+  .cnt label {
+    padding: 7px 6px;
+    font-size: 13px;
+    gap: 6px;
+  }
+  .quick {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .quick>span {
+    flex-basis: 100%;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 6px;
+    padding: 2px 4px 0;
+    font-size: 13px;
+  }
+  .quick>span small {
+    margin: 0;
+  }
+  .quick button {
+    min-width: 0;
+    padding: 5px 2px;
+  }
+  .quick button b {
+    font-size: 15px;
+  }
+  .quick button small {
+    font-size: 9.5px;
+  }
+  aside {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 12px;
+    padding-bottom: 8px;
+  }
+  @media (max-width:760px) {
+    .app {
+      --side:160px;
+    }
+    .cnt label {
+      font-size: 12px;
+      padding: 7px 4px;
+      gap: 4px;
+    }
+    .quick {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .quick>span {
+      grid-column: 1/-1;
+    }
+    .actions .btn {
+      font-size: 15px;
+      padding: 10px 8px;
+      line-height: 1.1;
+      text-align: center;
+    }
+    .ticket.two .cell {
+      font-size: 12px;
+    }
+  }
+  .pickme {
+    padding: 10px 12px;
+    width: min(92%,240px);
+  }
+  .pickme b {
+    font-size: 18px;
+  }
+  /* the card picker: cards on the left, slots and buttons on the right */
+  .pk {
+    --H:100vh;
+    display: grid;
+    grid-template-columns: minmax(0,1fr) 230px;
+    grid-template-rows: auto 1fr auto auto auto auto 1fr;
+    column-gap: 16px;
+    row-gap: 8px;
+    align-items: center;
+    justify-items: stretch;
+    padding: calc(8px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) calc(8px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));
+  }
+  @supports (height:100dvh) {
+    .pk {
+      --H:100dvh;
+    }
+  }
+  .pk-top {
+    grid-column: 1/-1;
+    grid-row: 1;
+    width: 100%;
+  }
+  .pk-badge {
+    width: 40px;
+    height: 40px;
+    font-size: 15px;
+    box-shadow: 0 0 0 3px var(--sun);
+  }
+  .pk-title b {
+    font-size: 20px;
+  }
+  .pk-title small {
+    font-size: 11px;
+  }
+  .pk-x {
+    width: 36px;
+    height: 36px;
+  }
+  .pk-track {
+    grid-column: 1;
+    grid-row: 2/-1;
+    height: 100%;
+    max-height: none;
+    overflow: hidden;
+    padding-top: 14px;
+  }
+  .pk-band {
+    padding: 6px 56px 6px 10px;
+  }
+  .pk-band span {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  .pk-band b {
+    white-space: nowrap;
+  }
+  .pk-rosette {
+    width: 50px;
+    height: 50px;
+    top: -14px;
+    right: -8px;
+  }
+  .pk-rosette b {
+    font-size: 17px;
+  }
+  .pk-rosette small {
+    font-size: 8px;
+  }
+  .pk-letters span {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .pk-card {
+    width: min(300px,42vw);
+    padding: 10px 10px 18px;
+  }
+  .pk-grid span {
+    aspect-ratio: auto;
+    height: clamp(18px,calc((var(--H) - 220px)/5),34px);
+    font-size: clamp(13px,calc((var(--H) - 210px)/9),20px);
+  }
+  .pk-prz {
+    display: none;
+  }
+  .pk-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+  .pk-slots {
+    grid-column: 2;
+    grid-row: 3;
+    width: 100%;
+  }
+  .pk-slot {
+    font-size: 12px;
+    padding: 7px 4px;
+  }
+  .pk-dots {
+    grid-column: 2;
+    grid-row: 4;
+    justify-self: center;
+  }
+  .pk-take {
+    grid-column: 2;
+    grid-row: 5;
+    justify-self: center;
+    padding: 9px 16px;
+    font-size: 14px;
+  }
+  .pk-bottom {
+    grid-column: 2;
+    grid-row: 6;
+    width: 100%;
+    gap: 8px;
+  }
+  .pk-bottom .pk-new {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+  .pk-bottom .btn {
+    padding: 11px 10px;
+    font-size: 16px;
+  }
+}
