@@ -1,0 +1,67 @@
+/*
+ * Reel Bingo "Sapphire Reels" theme (lobby PR #4): navy and ice blue with tangerine accents,
+ * Bungee and Chakra Petch fonts. Loaded last, so it overrides the base theme.
+ */
+:root{--bg:#061027;--panel:#0b1d44;--line:#3b82f688;--fg:#eef6ff;--mut:#9fb6d9;--gold:#38bdf8;--gold2:#8fdcff;--blue:#38bdf8;--tang:#ff9a3c;--crown:"Bungee","Rubik",system-ui,sans-serif;--num:"Chakra Petch","Rubik",system-ui,sans-serif;--stage:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 901' preserveAspectRatio='xMidYMid slice'%3e %3cdefs%3e %3clinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3e %3cstop offset='0' stop-color='%23030a1c'/%3e%3cstop offset='.55' stop-color='%230a1f4a'/%3e%3cstop offset='.66' stop-color='%230f2c63'/%3e%3cstop offset='.661' stop-color='%2306122e'/%3e%3cstop offset='1' stop-color='%23020814'/%3e %3c/linearGradient%3e %3cradialGradient id='glow' cx='.5' cy='.62' r='.5'%3e %3cstop offset='0' stop-color='%2338bdf8' stop-opacity='.35'/%3e%3cstop offset='.55' stop-color='%231e40af' stop-opacity='.15'/%3e%3cstop offset='1' stop-color='%23000' stop-opacity='0'/%3e %3c/radialGradient%3e %3clinearGradient id='beam' x1='0' y1='0' x2='0' y2='1'%3e %3cstop offset='0' stop-color='%23bfe8ff' stop-opacity='.32'/%3e%3cstop offset='1' stop-color='%23bfe8ff' stop-opacity='0'/%3e %3c/linearGradient%3e %3clinearGradient id='aur' x1='0' x2='1'%3e %3cstop offset='0' stop-color='%2322d3ee' stop-opacity='0'/%3e%3cstop offset='.3' stop-color='%2322d3ee' stop-opacity='.22'/%3e%3cstop offset='.6' stop-color='%233b82f6' stop-opacity='.18'/%3e%3cstop offset='1' stop-color='%233b82f6' stop-opacity='0'/%3e %3c/linearGradient%3e %3clinearGradient id='fade' x1='0' y1='0' x2='0' y2='1'%3e %3cstop offset='0' stop-color='%23020814' stop-opacity='0'/%3e%3cstop offset='1' stop-color='%23020814' stop-opacity='.9'/%3e %3c/linearGradient%3e %3cradialGradient id='vig' cx='.5' cy='.5' r='.75'%3e %3cstop offset='.6' stop-color='%23000' stop-opacity='0'/%3e%3cstop offset='1' stop-color='%23000' stop-opacity='.6'/%3e %3c/radialGradient%3e %3c/defs%3e %3crect width='1600' height='901' fill='url(%23sky)'/%3e %3cpath d='M-50 210 C300 120 520 300 820 200 S1300 110 1650 230 L1650 300 C1300 200 1100 330 820 280 S300 220 -50 300 Z' fill='url(%23aur)'/%3e %3cpath d='M-50 330 C350 260 600 400 900 330 S1350 270 1650 350 L1650 390 C1350 320 1150 430 900 380 S350 320 -50 380 Z' fill='url(%23aur)' opacity='.6'/%3e %3cg fill='%23fff'%3e %3ccircle cx='90' cy='60' r='1.6' opacity='.7'/%3e%3ccircle cx='210' cy='140' r='1.1' opacity='.5'/%3e%3ccircle cx='330' cy='40' r='1.4' opacity='.8'/%3e%3ccircle cx='460' cy='110' r='1' opacity='.5'/%3e%3ccircle cx='540' cy='30' r='1.8' opacity='.6'/%3e%3ccircle cx='640' cy='160' r='1' opacity='.4'/%3e%3ccircle cx='960' cy='150' r='1.2' opacity='.5'/%3e%3ccircle cx='1050' cy='50' r='1.7' opacity='.7'/%3e%3ccircle cx='1160' cy='120' r='1' opacity='.5'/%3e%3ccircle cx='1260' cy='36' r='1.5' opacity='.8'/%3e%3ccircle cx='1380' cy='150' r='1.2' opacity='.5'/%3e%3ccircle cx='1500' cy='70' r='1.8' opacity='.7'/%3e%3ccircle cx='1560' cy='210' r='1' opacity='.4'/%3e%3ccircle cx='40' cy='230' r='1.2' opacity='.5'/%3e%3ccircle cx='150' cy='420' r='1' opacity='.4'/%3e%3ccircle cx='1450' cy='420' r='1.1' opacity='.45'/%3e%3ccircle cx='270' cy='460' r='1.4' opacity='.5'/%3e%3ccircle cx='1330' cy='480' r='1.3' opacity='.5'/%3e%3ccircle cx='720' cy='80' r='1.2' opacity='.6'/%3e%3ccircle cx='880' cy='22' r='1.5' opacity='.7'/%3e %3c/g%3e %3crect width='1600' height='901' fill='url(%23glow)'/%3e %3cg%3e %3cpath d='M560 0 L620 0 L760 600 L470 600 Z' fill='url(%23beam)'/%3e %3cpath d='M980 0 L1040 0 L1130 600 L840 600 Z' fill='url(%23beam)'/%3e %3cpath d='M120 0 L170 0 L380 600 L120 600 Z' fill='url(%23beam)' opacity='.6'/%3e %3cpath d='M1430 0 L1480 0 L1480 600 L1220 600 Z' fill='url(%23beam)' opacity='.6'/%3e %3c/g%3e %3crect y='594' width='1600' height='2' fill='%237dd3fc' opacity='.7'/%3e %3cg stroke='%2338bdf8' stroke-width='1.4' opacity='.28' fill='none'%3e %3cpath d='M0 630 H1600 M0 676 H1600 M0 740 H1600 M0 830 H1600'/%3e %3cpath d='M800 596 L800 901 M800 596 L600 901 M800 596 L400 901 M800 596 L200 901 M800 596 L0 901 M800 596 L-400 901 M800 596 L1000 901 M800 596 L1200 901 M800 596 L1400 901 M800 596 L1600 901 M800 596 L2000 901'/%3e %3c/g%3e %3cellipse cx='800' cy='640' rx='420' ry='40' fill='%2338bdf8' opacity='.12'/%3e %3crect y='596' width='1600' height='305' fill='url(%23fade)'/%3e %3crect width='1600' height='901' fill='url(%23vig)'/%3e %3c/svg%3e")}
+body{background:#030a1c}
+@media (min-width:900px){body{background:linear-gradient(#030a1cd0,#030a1cd0),var(--stage) center/cover fixed #030a1c!important}}
+
+/* logo sign: ice blue + tangerine */
+.tlogo{font:400 2em/1 var(--crown)!important;margin-top:.35em;letter-spacing:.04em!important;padding:.18em .5em .14em!important;border-radius:.4em;background:#04102acc;box-shadow:0 0 0 .06em #38bdf8,0 0 .5em #38bdf866,inset 0 0 .6em #38bdf833}
+.tlogo:before,.tlogo:after{display:none!important}
+.tlogo span,.tlogo .l1,.tlogo .l2{background:none!important;background-image:none!important;-webkit-background-clip:border-box!important;background-clip:border-box!important;filter:none!important;-webkit-text-stroke:0!important}
+.tlogo .l1{color:#e6f6ff!important;-webkit-text-fill-color:#e6f6ff;text-shadow:0 0 .1em #7dd3fc,0 0 .35em #38bdf8aa}
+.tlogo .l2{margin-left:.28em!important;color:#ffa24a!important;-webkit-text-fill-color:#ffa24a;text-shadow:0 0 .1em #ffd2a3,0 0 .35em #ff8a1faa}
+
+.tbal{background:#071a40cc!important;border:1px solid #38bdf866!important;box-shadow:0 0 .8em #38bdf833}
+
+/* panels */
+.gp,.calledp,.chatp,.winp,.leftp,.nextbox{background:linear-gradient(180deg,#0c2150ee,#061331f2)!important;border:1px solid #38bdf855!important;border-radius:18px!important;box-shadow:inset 0 1px #ffffff14,0 0 0 1px #00000080,0 12px 30px #000c!important}
+.calledp{background:radial-gradient(120% 90% at 0 0,#16408a 0,#0000 60%),linear-gradient(180deg,#0e2658,#071636)!important;border-color:#38bdf888!important}
+.rorn{color:#38bdf8!important}
+.rorn:before{background:linear-gradient(90deg,#0000,#38bdf8)!important}
+.rorn:after{background:linear-gradient(90deg,#38bdf8,#0000)!important}
+
+/* reel cabinet: brushed steel with a tangerine bulb ring */
+.reels .cab{background:linear-gradient(180deg,#123170,#0a1d48 60%,#061331)!important;box-shadow:0 0 0 .55cqw #dbe7f5,0 0 0 1.1cqw #51617d,0 0 0 1.5cqw #38bdf8,0 0 4cqw #38bdf866,0 2cqw 5cqw #000c,inset 0 0 4cqw #000a!important}
+.reels .cab:before{content:"";position:absolute;inset:.9cqw;border-radius:3.4cqw;pointer-events:none;border:.7cqw dotted #ffb15e;filter:drop-shadow(0 0 .5cqw #ff9a3c);opacity:.9;animation:rbBulbs 1.4s steps(1) infinite}
+@keyframes rbBulbs{50%{border-color:#ffe3c2;filter:drop-shadow(0 0 .6cqw #ffd2a3)}}
+@media (prefers-reduced-motion:reduce){.reels .cab:before{animation:none}}
+.reels .marquee{font:400 8cqw/1 var(--crown)!important;letter-spacing:.05em!important;color:#e6f6ff!important;text-shadow:0 0 .6cqw #7dd3fc,0 0 2.4cqw #38bdf8,0 .5cqw 0 #0a1d48!important}
+.reels .marquee em{color:#ffa24a!important;text-shadow:0 0 .6cqw #ffd2a3,0 0 2.4cqw #ff8a1f,0 .5cqw 0 #0a1d48!important}
+.reels .window{background:#030b20!important;box-shadow:inset 0 0 0 .4cqw #2563eb,inset 0 1.5cqw 3cqw #000!important}
+.reels .rhead{font-family:var(--crown)!important;font-weight:400!important;border-radius:999px!important;box-shadow:0 0 1.6cqw color-mix(in srgb,var(--lc) 60%,transparent)}
+.reels .rview{background:linear-gradient(180deg,#000a,#fff1 30%,#fff2,#fff1 70%,#000a),#0b1c42!important;box-shadow:inset 0 0 0 .3cqw color-mix(in srgb,var(--lc) 80%,transparent)!important}
+.reels .spins i.on{background:var(--tang)!important;box-shadow:0 0 1.6cqw #ff9a3c!important}
+
+/* primary buttons: tangerine */
+.pickbtn:not(:disabled),.mbtn.pickbtn:not(:disabled){background:linear-gradient(180deg,#ffc07a,#ff9a3c 45%,#e8701a)!important;border-color:#ffd2a3!important;box-shadow:0 6px 16px #0009,0 0 1.2em #ff9a3c44,inset 0 1px #fff8!important}
+.pickbtn span,.pickbtn svg{color:#2a1300!important}
+
+.calledp .c,.lwgrid,.tk .c,.grid5{font-family:var(--num)!important}
+.banner{font-family:var(--crown)!important;font-weight:400!important;background:linear-gradient(180deg,#1d4ed8,#0b2a6b)!important;border-color:#7dd3fc!important;box-shadow:0 0 1em #38bdf855}
+
+.modal{background:#030a1cee!important}
+.pc{background:radial-gradient(circle at 50% 30%,#123170f2,#030a1cf8 75%)!important}
+
+/* mobile: end the stage right under the reel cabinet (no empty floor gap) */
+@media (max-width:899px){
+.arena .hero,.arena:not(.playing) .hero,.arena.playing .hero{aspect-ratio:1/.87!important}
+}
+@media (max-width:599px){
+.arena.playing .hero{height:calc(var(--hh)*.87)!important;aspect-ratio:auto!important}
+}
+
+/* desktop: when the window is wide and short the arena is narrower than the
+   window, but its children inherited a font sized from the full window width
+   (cqw on the container itself resolves against the viewport). That made the
+   left stake panel taller than its slot so it ran over the cards panel.
+   Size children from the arena instead. */
+@media (min-width:900px){
+:where(.arena>*){font-size:calc(14*var(--u))}
+.arena{font-size:calc(14px*min(100vw,100svh*1600/901)/1600)}
+.topbar .tlogo{visibility:hidden}
+}
+@media (min-width:900px){
+.arena:not(.playing) .tkp{top:50.6%!important;height:48.2%!important}
+}
