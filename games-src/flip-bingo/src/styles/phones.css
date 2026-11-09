@@ -1,0 +1,367 @@
+/* ---- phones: keep the pot, the ice board and the whole card on one screen ---- */
+@media (max-width:760px) and (orientation:portrait),(max-width:760px) and (min-height:521px) {
+  .app {
+    --hdr: 34px;
+    --pot: 100px;
+    --gp: 8px;
+    --chrome: calc(var(--hdr) + var(--pot) + 3*var(--gp) + 30px + 74px + 14px + env(safe-area-inset-top,0px) + env(safe-area-inset-bottom,0px));
+    --fit: calc((100vh - var(--chrome))/10);
+    --tw: calc((100vw - 64px - env(safe-area-inset-left,0px) - env(safe-area-inset-right,0px))/8);
+    --cw: calc((100vw - 58px - env(safe-area-inset-left,0px) - env(safe-area-inset-right,0px))/5);
+    padding: calc(4px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) calc(16px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));
+  }
+  @supports (height:100dvh) {
+    .app {
+      --fit: calc((100dvh - var(--chrome))/10);
+    }
+  }
+  header {
+    height: var(--hdr);
+    margin-bottom: var(--gp);
+  }
+  .logo {
+    font-size: 22px;
+  }
+  .snd {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    font-size: 17px;
+  }
+  .bal {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 5px 10px;
+    border-radius: 10px;
+  }
+  .bal small {
+    font-size: 9px;
+  }
+  .bal b {
+    font-size: 14px;
+  }
+  main {
+    gap: var(--gp);
+  }
+  .pot {
+    height: var(--pot);
+    padding: 8px;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 6px 10px;
+  }
+  .pv {
+    padding: 4px 10px;
+    white-space: nowrap;
+  }
+  .pv small {
+    font-size: 9px;
+    letter-spacing: .1em;
+  }
+  .pv b {
+    display: inline;
+    font-size: 20px;
+    line-height: 1.15;
+  }
+  .pv em {
+    margin-left: 5px;
+    font-size: 12px;
+  }
+  .pmeta {
+    font-size: 11.5px;
+    gap: 0;
+    line-height: 14px;
+  }
+  .pbtns {
+    gap: 6px;
+  }
+  .pbtns .btn {
+    padding: 0 10px;
+    height: 36px;
+    font-size: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px #146c8f;
+  }
+  .pbtns .btn.collect {
+    box-shadow: 0 4px #9c6a0c;
+  }
+  .pbtns .ghostbtn {
+    box-shadow: none;
+  }
+  .board {
+    gap: 4px;
+    padding: 6px;
+    border-radius: 14px;
+  }
+  .tile {
+    aspect-ratio: auto;
+    height: max(22px,min(var(--tw),var(--fit)));
+  }
+  .back:after {
+    font-size: 12px;
+  }
+  .face b {
+    font-size: clamp(13px,4vw,18px);
+  }
+  .face small {
+    font-size: 9px;
+  }
+  .card {
+    padding: 8px;
+  }
+  .cgrid, .chead {
+    gap: 4px;
+  }
+  .cgrid {
+    margin-top: 4px;
+  }
+  .chead span {
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .cell {
+    aspect-ratio: auto;
+    height: max(22px,min(calc(var(--cw)/1.5),var(--fit)));
+    border-radius: 8px;
+    font-size: clamp(14px,min(4.4vw,calc(var(--fit)*.62)),17px);
+  }
+  .cell.free {
+    font-size: 16px;
+  }
+  .cfoot {
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .idle-msg, .result {
+    padding: 10px 14px;
+    gap: 4px;
+    width: min(90%,360px);
+  }
+  .idle-msg b {
+    font-size: 16px;
+  }
+  .idle-msg small {
+    font-size: 12.5px;
+  }
+  .result b {
+    font-size: 24px;
+  }
+  .result span {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+  .result .btn {
+    padding: 9px 14px;
+    font-size: 14px;
+  }
+}
+
+/* very short screens (iPhone SE inside the lobby, browser bars showing): drop the logo, keep balance and sound */
+@media (max-width:760px) and (orientation:portrait) and (max-height:600px) {
+  .app {
+    --hdr: 30px;
+    --gp: 6px;
+  }
+  .logo {
+    font-size: 18px;
+  }
+  .snd {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* phones on their side: board on the left, pot and card on the right */
+@media (max-width:1100px) and (orientation:landscape) and (max-height:520px) {
+  .app {
+    --H: 100vh;
+    padding: calc(4px + env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));
+  }
+  @supports (height:100dvh) {
+    .app {
+      --H: 100dvh;
+    }
+  }
+  header {
+    height: 30px;
+    margin-bottom: 6px;
+  }
+  .logo {
+    font-size: 20px;
+  }
+  .snd {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+  .bal {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 4px 10px;
+    border-radius: 10px;
+  }
+  .bal small {
+    font-size: 9px;
+  }
+  .bal b {
+    font-size: 14px;
+  }
+  main {
+    display: grid;
+    grid-template-columns: minmax(0,1.3fr) minmax(0,1fr);
+    gap: 10px;
+    align-items: start;
+  }
+  .left, .right {
+    display: contents;
+  }
+  .mid {
+    grid-column: 1;
+    grid-row: 1/span 2;
+  }
+  .pot {
+    grid-column: 2;
+    grid-row: 1;
+    height: 96px;
+    padding: 8px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 6px 10px;
+    align-items: center;
+  }
+  .pv {
+    padding: 4px 10px;
+    white-space: nowrap;
+  }
+  .pv small {
+    font-size: 9px;
+    letter-spacing: .1em;
+  }
+  .pv b {
+    display: inline;
+    font-size: 18px;
+    line-height: 1.15;
+  }
+  .pv em {
+    margin-left: 5px;
+    font-size: 12px;
+  }
+  .pmeta {
+    font-size: 11px;
+    gap: 0;
+    line-height: 13px;
+  }
+  .pbtns {
+    grid-column: 1/-1;
+    flex-direction: row;
+    gap: 6px;
+  }
+  .pbtns .btn {
+    flex: 1;
+    height: 34px;
+    padding: 0 10px;
+    font-size: 14px;
+    border-radius: 12px;
+    box-shadow: 0 4px #146c8f;
+  }
+  .pbtns .btn.collect {
+    box-shadow: 0 4px #9c6a0c;
+  }
+  .pbtns .ghostbtn {
+    box-shadow: none;
+  }
+  .card {
+    grid-column: 2;
+    grid-row: 2;
+    padding: 8px;
+  }
+  .controls {
+    grid-column: 1/-1;
+    grid-row: 3;
+  }
+  .hist {
+    grid-column: 1/-1;
+    grid-row: 4;
+  }
+  .how {
+    display: none;
+  }
+  .board {
+    gap: 4px;
+    padding: 6px;
+    border-radius: 14px;
+  }
+  .tile {
+    aspect-ratio: auto;
+    height: max(24px,calc((var(--H) - 92px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px))/5));
+  }
+  .tile, .tile>div {
+    border-radius: 8px;
+  }
+  .back:after {
+    font-size: 12px;
+  }
+  .face b {
+    font-size: 15px;
+  }
+  .face small {
+    font-size: 9px;
+  }
+  .cgrid, .chead {
+    gap: 3px;
+  }
+  .cgrid {
+    margin-top: 3px;
+  }
+  .chead span {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .cell {
+    aspect-ratio: auto;
+    height: max(20px,calc((var(--H) - 245px - env(safe-area-inset-top,0px) - env(safe-area-inset-bottom,0px))/5));
+    font-size: 14px;
+    border-radius: 7px;
+  }
+  .cell.free {
+    font-size: 14px;
+  }
+  .cfoot {
+    margin-top: 4px;
+    font-size: 11px;
+    line-height: 15px;
+  }
+  .idle-msg, .result {
+    padding: 10px 14px;
+    gap: 4px;
+    width: min(90%,360px);
+  }
+  .idle-msg b {
+    font-size: 16px;
+  }
+  .idle-msg small {
+    font-size: 12.5px;
+  }
+  .result b {
+    font-size: 24px;
+  }
+  .result span {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+  .result .btn {
+    padding: 9px 14px;
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion:reduce) {
+  * {
+    animation: none!important;
+    transition: none!important;
+  }
+}
