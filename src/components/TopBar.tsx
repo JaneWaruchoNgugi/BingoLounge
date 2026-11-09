@@ -18,8 +18,8 @@ export function TopBar({ onLearn }: { onLearn: () => void }) {
       <div className="wallet">
         <Coins className="coins" />
         <b>KSh 1,250</b>
-        <button className="topup" aria-label="Add funds">
-          <Plus />
+        <button className="topup" aria-label="Deposit">
+          <Plus /> <span>Deposit</span>
         </button>
       </div>
       <button className="user">
