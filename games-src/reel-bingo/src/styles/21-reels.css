@@ -1,0 +1,34 @@
+/* The reel cabinet: marquee, five reels in a window, blur strips while spinning, a landing bounce,
+ * the payline and the spin lights (Reels.tsx). */
+.gobj.reels{aspect-ratio:1189/1100}
+.reels .cab{position:absolute;top:4%;right:2%;bottom:6%;left:2%;border-radius:4cqw;padding:3cqw 3cqw 2.4cqw;display:flex;flex-direction:column;gap:2.2cqw;background:linear-gradient(180deg,#182953,#0c162d 60%,#091021);box-shadow:0 0 0 .7cqw #35a9f6,0 0 0 1.4cqw #084b78,0 2cqw 5cqw #000c,inset 0 0 4cqw #0008}
+.reels .marquee{text-align:center;font:900 8.6cqw/1 var(--display);letter-spacing:.06em;color:#fff;text-shadow:0 .5cqw 0 #b45309,0 0 3cqw #46b5ff}
+.reels .marquee em{font-style:normal;color:var(--gold2)}
+.reels .window{position:relative;flex:1;display:grid;grid-template-columns:repeat(5,1fr);gap:1.6cqw;padding:1.6cqw;border-radius:2.6cqw;background:#040913;box-shadow:inset 0 0 0 .4cqw #314a88,inset 0 1.5cqw 3cqw #000}
+.reels .reel{display:flex;flex-direction:column;gap:1.2cqw;min-width:0}
+.reels .rhead{text-align:center;font:900 6cqw/1.25 var(--display);color:#fff;background:var(--lc);border-radius:1.6cqw;text-shadow:0 .3cqw 0 #0006}
+.reels .rview{position:relative;flex:1;overflow:hidden;border-radius:1.8cqw;background:linear-gradient(180deg,#0006,#fff1 30%,#fff2,#fff1 70%,#0006),#0e1b3a;box-shadow:inset 0 0 0 .3cqw color-mix(in srgb,var(--lc) 60%,transparent);display:grid;place-items:center;container-type:inline-size}
+.hero .gobj.reels .rball{width:84cqw;height:auto;aspect-ratio:1;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:22cqw;position:relative;color:#0d162b}
+.reels .rball.star{background:radial-gradient(circle at 35% 30%,#d1e0f0,#43b4ff 45%,#0682d5);box-shadow:0 0 6cqw #43b4ff}
+.reels .rball.star b{font-size:2.6em;color:#fff;text-shadow:0 0 4cqw #fff,0 .6cqw 0 #b45309}
+.reels .rface0{width:60cqw;aspect-ratio:1;border-radius:50%;border:2cqw dashed #314a88}
+.reels .strip{position:absolute;left:0;right:0;top:0;display:flex;flex-direction:column;align-items:center;gap:8cqw;animation:reelroll .42s linear infinite;filter:blur(.5px)}
+@keyframes reelroll{0%{transform:translateY(-50%)}to{transform:translateY(0)}}
+.reels .landed{animation:reelland .38s cubic-bezier(.2,1.6,.4,1)}
+@keyframes reelland{0%{transform:translateY(-45%)}to{transform:none}}
+.reels .reel.thud .rview{animation:thud .3s}
+@keyframes thud{40%{box-shadow:inset 0 0 0 .6cqw #fff,0 0 3cqw var(--lc)}}
+.reels .reel.starhit .rview{box-shadow:inset 0 0 0 .6cqw #43b4ff,0 0 4cqw #43b4ff}
+.reels .payline{position:absolute;left:.8cqw;right:.8cqw;top:calc(50% + 3.6cqw);height:.5cqw;background:linear-gradient(90deg,transparent,#67c2ff88,transparent);pointer-events:none}
+.reels .spins{display:flex;align-items:center;justify-content:center;gap:1.4cqw}
+.reels .spins i{width:3cqw;aspect-ratio:1;border-radius:50%;background:#ffffff1a;box-shadow:inset 0 0 0 .3cqw #314a88}
+.reels .spins i.on{background:var(--gold);box-shadow:0 0 1.6cqw #35a9f6}
+.reels .spins i.now{background:#67c2ff88;animation:pip .5s infinite alternate}
+@keyframes pip{to{background:#fff}}
+.reels .spins span{margin-left:1.5cqw;font:800 3.6cqw var(--display);color:var(--mut)}
+@media (prefers-reduced-motion:reduce){.reels .strip{animation-duration:1.6s;filter:none}.reels .landed{animation:none}}
+
+/* A cell daubed by the Star: blue, with a star. */
+.grid5 .c.m.st{background:radial-gradient(circle at 35% 30%,#d1e0f0,#43b4ff 50%,#0682d5)!important;color:#00233a!important;box-shadow:0 0 .8em #43b4ff}
+.grid5 .c.m.st:after{content:"★";position:absolute;top:.05em;right:.15em;font-size:.6em;color:#fff}
+.grid5 .c{position:relative}

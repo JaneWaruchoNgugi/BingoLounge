@@ -1,0 +1,43 @@
+/*
+ * BINGO35 win popup: a dark emerald card framed in gold, serif gold BINGO, a dark green ribbon,
+ * gold-ringed numbers and gold prize panels, to match the Emerald Crown theme.
+ */
+.bingo{background:radial-gradient(circle at 50% 42%,#0d162af0,#010604f5 72%)!important}
+.lwcard{border:2px solid #0000!important;background:radial-gradient(ellipse at 50% 0,#182a52 0,#0000 55%) padding-box,linear-gradient(180deg,#0c1322,#050912 60%,#03050a) padding-box,linear-gradient(180deg,#cadbed,#399ee1 30%,#125887 70%,#399ee1) border-box!important;box-shadow:0 0 0 1px #000,0 0 0 5px #090e16,0 0 0 6px #4694c888,0 24px 60px #000e,0 0 50px #399ee133!important}
+.lwcup .tr{color:#75c3f8!important;fill:#399ee144!important;filter:drop-shadow(0 0 10px #399ee1) drop-shadow(0 3px 0 #083858)!important}
+.lwcup .st{color:#cadbed!important;fill:#54b3f3!important}
+.lwbingo{font-family:var(--crown)!important;font-weight:900!important;letter-spacing:.04em!important;background:linear-gradient(180deg,#dce8f3 10%,#6bbcf2 42%,#2b87c4 68%,#125887 92%)!important;-webkit-background-clip:text!important;background-clip:text!important;filter:drop-shadow(0 3px 0 #031a29) drop-shadow(0 0 16px #399ee166)!important}
+.lwribbon{border:2px solid #399ee1!important;background:linear-gradient(180deg,#193061,#0d1c3b 60%,#08132a)!important;box-shadow:0 6px 18px #000c,inset 0 1px 0 #ffffff22!important}
+.lwribbon::before,.lwribbon::after{background:linear-gradient(180deg,#11234a,#070f23)!important;border:2px solid #3e85b4!important}
+.lwribbon span{color:#e5eef6!important;text-shadow:0 2px 0 #030b1a,0 0 14px #54b3f366!important}
+.lwwhich .lbl{color:#85adc7!important}
+.lwwhich .tab{background:#070c15!important;border-color:#4694c855!important;color:#9fb3a7!important}
+.lwwhich .tab.on{background:linear-gradient(180deg,#83c9f8,#399ee1 55%,#217ab5)!important;border-color:#cadbed!important;color:#00192a!important;box-shadow:0 0 0 2px #399ee144,0 0 14px #399ee188!important}
+.lwwhich .price{color:#75c3f8!important}
+.lwgrid{border:2px solid #4694c8!important;background:linear-gradient(180deg,#080e1a,#04070d)!important;box-shadow:inset 0 0 18px #000c,0 0 16px #399ee122!important}
+.lwh{text-shadow:0 1px 0 #0006!important;box-shadow:inset 0 1px 0 #ffffff44,0 2px 6px #0008!important}
+.lwh.h0{background:linear-gradient(#4f8dff,#1f5fd6)!important}
+.lwh.h1{background:linear-gradient(#ff5a6a,#c81e36)!important}
+.lwh.h2{background:linear-gradient(#75c3f8,#2b87c4)!important;color:#00192a!important;text-shadow:none!important}
+.lwh.h3{background:linear-gradient(#4ade80,#16a34a)!important}
+.lwh.h4{background:linear-gradient(#34a9d3,#16388a)!important}
+.lwgrid i{color:#dde2ea!important;background:radial-gradient(circle at 50% 35%,#131e37,#070d18)!important;box-shadow:inset 0 0 0 1px #4694c844!important}
+.lwgrid i.m{color:var(--c)!important;background:radial-gradient(circle,#f8fafc 0 58%,#d9e0e8 66%)!important;box-shadow:0 0 0 3px var(--c),0 0 10px var(--c)!important}
+.lwgrid i.f{color:#75c3f8!important}
+.lwgrid i.w{color:#042439!important;background:radial-gradient(circle at 50% 38%,#ecf2f9,#75c3f8 55%,#3798d8)!important;box-shadow:0 0 0 3px #399ee1,0 0 14px #54b3f3!important}
+.lwprize{border:2px solid #4694c8!important;background:radial-gradient(ellipse at 50% 0,#182a52,#0000 70%),linear-gradient(180deg,#0c1322,#050912)!important;box-shadow:inset 0 0 22px #000a,0 0 18px #399ee133!important}
+.lwpill,.lwchip{background:linear-gradient(180deg,#83c9f8,#399ee1 55%,#217ab5)!important;color:#00192a!important;box-shadow:0 3px 10px #000a!important}
+.lwpv b{background:linear-gradient(180deg,#dce8f3,#6bbcf2 45%,#2b87c4)!important;-webkit-background-clip:text!important;background-clip:text!important}
+.lwpv .coin,.lwpv .spk{color:#75c3f8!important}
+.lwtotal{background:#070c15!important;border:1px solid #4694c866!important}
+.lwtotal span{color:#85adc7!important}
+.lwtotal b{color:#e5eef6!important}
+.lwxp{background:#070c15!important;border:1px solid #4694c899!important}
+.lwxp .gain{color:#4ade80!important;border-right-color:#4694c844!important}
+.lwxp svg{color:#75c3f8!important;fill:#54b3f3!important}
+.lwxp .row{color:#bad3e4!important}
+.lwxp .bar{background:#ffffff12!important}
+.lwxp .bar u{background:linear-gradient(90deg,#27539f,#75c3f8)!important;box-shadow:0 0 8px #54b3f366!important}
+.lwbtn.gold{background:linear-gradient(180deg,#cadbed,#45a7e8 45%,#217ab5)!important;color:#00192a!important;box-shadow:0 4px 0 #0c4c78,0 12px 24px #000b,inset 0 2px 0 #ffffff88!important}
+.lwbtn.ghost{background:#070c15!important;border:1.5px solid #4694c8!important;color:#e5eaef!important;box-shadow:none!important}
+.lwpv b{white-space:nowrap;font-size:clamp(36px,11vw,52px)!important}

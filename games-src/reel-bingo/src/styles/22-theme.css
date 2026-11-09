@@ -1,0 +1,61 @@
+/*
+ * Base theme carried over from Bingo 35, recoloured blue: near-black panels framed in thin blue,
+ * a serif logo with a crown, blue buttons and blue-ringed number balls. 29-sapphire-theme.css
+ * restyles it on top.
+ */
+:root{--bg:#020806;--panel:#070b12;--line:#3e85b466;--fg:#e5eaef;--mut:#a9b8ae;--gold:#399ee1;--gold2:#75c3f8;--green:#22c55e;--crown:'Cinzel',Georgia,serif}
+
+/* panels */
+.gp,.calledp,.chatp,.winp,.leftp,.nextbox{background:linear-gradient(180deg,#0b1019f2,#05080ef2)!important;border:1px solid #4694c8cc!important;border-radius:14px!important;box-shadow:inset 0 0 0 1px #00000099,inset 0 1px 0 #75c3f822,0 10px 28px #000c!important}
+.pt{color:var(--fg)!important;font-weight:600}
+.pt b,.ccount b{color:var(--fg)}
+.ccount{color:var(--gold2)!important}
+.row{border-top-color:#4694c826!important}
+.mut,.clast{color:var(--mut)!important}
+
+/* logo: serif gold BINGO, green-gold 35, a crown above and a gold rule below */
+.tlogo{position:relative;font:900 2.6em/1 var(--crown)!important;font-style:normal!important;transform:none!important;letter-spacing:.02em;padding:.32em 0 .16em}
+.tlogo span{-webkit-text-stroke:0!important}
+.tlogo .l1{background-image:linear-gradient(180deg,#dce8f3 10%,#6bbcf2 40%,#2b87c4 66%,#125887 92%)!important;filter:drop-shadow(0 .05em 0 #042439) drop-shadow(0 0 .25em #54b3f355)!important}
+.tlogo .l2{margin-left:.12em;background-image:linear-gradient(180deg,#e9ffd8 6%,#6fe39a 38%,#27539f 66%,#102a5a 92%)!important;filter:drop-shadow(0 .05em 0 #07142b) drop-shadow(0 0 .25em #49b3d955)!important}
+.tlogo::before{content:'';position:absolute;left:50%;top:-.1em;width:.9em;height:.55em;transform:translateX(-50%);background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 36'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23d3e2f0'/%3E%3Cstop offset='.5' stop-color='%2345a7e8'/%3E%3Cstop offset='1' stop-color='%23125887'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M4 30 L2 8 L17 20 L30 2 L43 20 L58 8 L56 30 Z' fill='url(%23g)' stroke='%23083858' stroke-width='1.5'/%3E%3Crect x='4' y='30' width='52' height='5' rx='2' fill='url(%23g)'/%3E%3Ccircle cx='30' cy='3' r='3' fill='%23d3e2f0'/%3E%3Ccircle cx='2.5' cy='8' r='2.5' fill='%23d3e2f0'/%3E%3Ccircle cx='57.5' cy='8' r='2.5' fill='%23d3e2f0'/%3E%3C/svg%3E") center/contain no-repeat}
+.tlogo::after{content:'';position:absolute;left:4%;right:4%;bottom:0;height:.06em;background:linear-gradient(90deg,#0000,#399ee1 20%,#cadbed 50%,#399ee1 80%,#0000)}
+.tbal{background:linear-gradient(180deg,#0b1019,#05080e)!important;border:1px solid #4694c8cc!important;border-radius:12px!important}
+.tbal em{color:var(--gold2)!important}
+.topbar .trow>:first-child button,.topbar button.gear,.setbtn{border:1px solid #4694c8cc!important;background:radial-gradient(circle,#151c29,#05080e)!important;color:var(--gold2)!important}
+
+/* gold buttons */
+.chat-in button{background:linear-gradient(180deg,#83c9f8,#399ee1 55%,#217ab5)!important;color:#00192a!important;box-shadow:inset 0 1px 0 #fff6,0 4px 14px #0009!important}
+.pickbtn{background:linear-gradient(180deg,#83c9f8,#399ee1 55%,#217ab5)!important;color:#00192a!important}
+
+/* price chips keep four clear colours */
+.qchip:nth-child(1){--c:#2f7bf0;--d:#123e9c}
+.qchip:nth-child(2){--c:#ef3b4f;--d:#8c1325}
+.qchip:nth-child(3){--c:#2960c0;--d:#11316a}
+.qchip:nth-child(4){--c:#2ca2f2;--d:#005187;--t:#00192a}
+.qmeta{background:#162131!important;border-color:#354b6d!important;color:#e0e7f3!important}
+
+/* called numbers: gold-ringed empty balls, cream numbers */
+.calledp .ball:not(.bl){background:#070a11!important;box-shadow:inset 0 0 0 1.5px #4694c8!important;color:#e5eaef!important}
+.calledp .ball.nx{box-shadow:inset 0 0 0 2px #75c3f8,0 0 .6em #75c3f888!important;color:#75c3f8!important}
+.calledp .cbig.empty{border-color:#2f99bf!important;color:#e5eaef!important;background:none!important}
+.calledp .cbar{background:#ffffff14!important}
+.calledp .cbar i{background:linear-gradient(90deg,#27539f,#75c3f8)!important}
+@media(min-width:900px){.calledp .balls{grid-template-columns:repeat(10,minmax(0,1fr))!important}}
+
+/* card headers B I N G O as on the mockup */
+.tkp .tk .hd.h0{background:linear-gradient(180deg,#4f8dff,#1f5fd6)!important}
+.tkp .tk .hd.h3{background:linear-gradient(180deg,#4ade80,#16a34a)!important}
+.tkp .tk .hd.h4{background:linear-gradient(180deg,#34a9d3,#16388a)!important}
+
+/* chat names and inputs */
+.chatp input{background:#04060a!important;border:1px solid #4694c888!important;color:var(--fg)!important}
+.chatp b,.chatp strong{color:var(--gold2)}
+
+/* phone: instant-play box and draw countdown in the same dark emerald and gold */
+@media(max-width:899px){
+ .mpick .qpick{background:linear-gradient(180deg,#0b1019f2,#05080ef2) padding-box,linear-gradient(135deg,#75c3f8,#4694c8 50%,#296287) border-box!important}
+ .hcount{background:linear-gradient(180deg,#0b1019ee,#05080eee)!important;border:1px solid #4694c8cc!important;--hc:#75c3f8}
+}
+/* phone and tablet: the box ends just under the podium, so the stake panel sits close under the machine */
+@media(max-width:899px){.arena:not(.playing) .hero{aspect-ratio:1/1.05!important}}

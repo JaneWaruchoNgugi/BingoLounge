@@ -1,0 +1,104 @@
+/* ---------- Called Numbers: latest ball large beside the count and a progress bar, then the round's balls ---------- */
+.calledp{display:flex;flex-direction:column;gap:.6em;background:radial-gradient(120% 90% at 0 0,#20356f 0,#00000000 60%),linear-gradient(180deg,#16254b,#0c1730)!important;border-color:#4865b1!important}
+.chead{display:flex;align-items:center;gap:.75em}
+.cbig{position:relative;flex:none;width:3.6em;aspect-ratio:1;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1;color:#17223e;font-family:var(--display);box-shadow:0 0 0 .18em #ffffff26,0 0 1.2em #5fc7ed99,0 .3em .6em #000000aa;animation:cbin .55s cubic-bezier(.2,1.6,.4,1)}
+.cbig::before{content:"";position:absolute;inset:17%;border-radius:50%;background:radial-gradient(circle at 50% 38%,#ffffff,#f0fafd 60%,#e7ecf7)}
+.cbig small,.cbig b{position:relative;font-weight:900}.cbig small{font-size:.75em}.cbig b{font-size:1.3em;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.cbig.empty{background:#0d1c40;border:.12em dashed #5771b0;box-shadow:none;color:#7c8eb9;font:900 1.5em var(--display);animation:none}.cbig.empty::before{display:none}
+@keyframes cbin{from{transform:scale(.3) rotate(-120deg);opacity:0}}
+.cinfo{flex:1;min-width:0;display:flex;flex-direction:column;gap:.35em}
+.calledp .pt{margin:0;font-size:1.05em}
+.ccount{font:700 .85em var(--display);color:var(--mut)}.ccount b{font-size:1.25em;color:#ffffff}
+.cbar{height:.45em;border-radius:99px;background:#ffffff14;overflow:hidden}
+.cbar i{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#46beea,#5fc7ed,#42a8eb,#fbbf24);box-shadow:0 0 .6em #5fc7ed;transition:width .5s}
+.clast{font:600 .78em var(--body);color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.calledp .balls{grid-template-columns:repeat(9,minmax(0,1fr));gap:.38em;align-content:start}
+.calledp .ball{position:relative;background:radial-gradient(circle,#102350 0 58%,#1b326b 60%);border:0;box-shadow:inset 0 0 0 1px #314a8855;color:#ffffff2e;font:700 .62em var(--display)}
+.calledp .ball.nx{box-shadow:inset 0 0 0 .14em #fbbf24;color:#fbbf24;animation:cnext 1.2s ease-in-out infinite}
+@keyframes cnext{50%{box-shadow:inset 0 0 0 .14em #fbbf2433,0 0 .8em #fbbf2466}}
+.calledp .ball.bl{color:#17223e;font-size:inherit;box-shadow:0 .15em .35em #00000099}
+.calledp .ball.bl small{font-size:.58em}.calledp .ball.bl b{font-size:.8em}
+.calledp .ball.bl.nw{box-shadow:0 0 0 .14em #ffffff,0 0 .9em #fde047;animation:cbin .5s cubic-bezier(.2,1.6,.4,1)}
+@media(min-width:900px){
+ .calledp{height:25.5%!important;gap:.5em}
+ .chatp{top:37.6%!important;height:25.6%!important}
+ .cbig{width:3.3em}
+}
+@media(max-width:899px){
+ .calledp{font-size:14px}
+ .calledp .balls{font-size:clamp(12px,3.6vw,16px)}
+}
+@media(min-width:600px) and (max-width:899px){
+ .calledp .balls{grid-template-columns:repeat(12,minmax(0,1fr));font-size:15px}
+ .cbig{width:4.2em}
+}
+
+/* ---------- Bingo cards: a coloured ticket per card, glossy column headers, stamped tiles for called numbers ---------- */
+.tkp .tk{--acc:#46beea;position:relative;background:linear-gradient(180deg,color-mix(in srgb,var(--acc) 14%,#142246),#0d1833 70%)!important;border:1px solid color-mix(in srgb,var(--acc) 40%,#ffffff10)!important;border-radius:.9em!important;box-shadow:inset 0 3px 0 var(--acc),0 .4em 1em #00000077;overflow:hidden;gap:.35em}
+.tkp .tk.a1{--acc:#6bbdf3}.tkp .tk.a2{--acc:#a3e635}.tkp .tk.a3{--acc:#fb923c}
+.tkp .tk.win{border-color:#46b5ff!important;box-shadow:inset 0 3px 0 #46b5ff,0 0 0 2px #46b5ff88,0 0 1.4em #46b5ff77}
+.tkh{display:flex;align-items:center;gap:.4em;padding:.15em .15em 0;font:800 .72em var(--display);letter-spacing:.06em;white-space:nowrap;min-width:0}
+.tkh b{color:var(--acc);text-shadow:0 0 .6em color-mix(in srgb,var(--acc) 60%,#00000000)}
+.tkprice{color:#ceeefa;opacity:.8;font-weight:700}
+.togo{margin-left:auto;padding:.15em .6em;border-radius:99px;background:#ffffff12;color:#e2f5fc;font-weight:800}
+.tk.win .togo{background:linear-gradient(180deg,#82cdff,#35a9f6);color:#00192a}
+.tkp .tk .grid5{gap:.22em!important}
+.tkp .tk .grid5 .hd{position:relative;border-radius:.4em;font:900 .78em/1.45 var(--display)!important;letter-spacing:.04em;color:#ffffff;text-shadow:0 1px 1px #00000066;box-shadow:inset 0 1px 0 #ffffff59,inset 0 -2px 0 #00000033}
+.tkp .tk .hd.h0{background:linear-gradient(180deg,#6cccef,#1dace0)}.tkp .tk .hd.h1{background:linear-gradient(180deg,#ff6b7a,#d61f3b)}.tkp .tk .hd.h2{background:linear-gradient(180deg,#57bcff,#0084dc);color:#002239;text-shadow:none}.tkp .tk .hd.h3{background:linear-gradient(180deg,#97daf3,#3fb5e0)}.tkp .tk .hd.h4{background:linear-gradient(180deg,#4fb9e0,#16a34a)}
+.tkp .tk .grid5 .c{background:#ffffff0b;border:0;border-radius:.42em;color:#e6f6fc;font-weight:800;box-shadow:inset 0 0 0 1px #ffffff10}
+/* a called number: the cell becomes a glossy tile in its column's colour with a stamped ring */
+.tkp .tk .grid5 .c.m{--k:#46beea;--k2:#2056ca;width:100%!important;height:100%!important;aspect-ratio:auto!important;transform:none!important;justify-self:stretch;align-self:stretch;border-radius:.42em!important;background:linear-gradient(160deg,var(--k),var(--k2))!important;color:#ffffff!important;text-shadow:0 1px 2px #00000077;box-shadow:inset 0 1px 0 #ffffff66,0 0 .7em color-mix(in srgb,var(--k) 55%,#00000000)!important;font-size:1em!important}
+.tkp .tk .grid5 .c.m::before{inset:12% auto auto 50%!important;width:auto;height:76%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:none!important;border:.13em solid #ffffffa6;z-index:0}
+.tkp .tk .grid5 .c.m::after{inset:0 0 55% 0!important;border-radius:.42em .42em 50% 50%/.42em .42em 30% 30%;background:linear-gradient(180deg,#ffffff40,#ffffff00)!important}
+.tkp .tk .grid5 .c.col1.m{--k:#ff5468;--k2:#c21734}.tkp .tk .grid5 .c.col2.m{--k:#34aeff;--k2:#0080d5;color:#00192a!important;text-shadow:0 1px 0 #ffffff77}.tkp .tk .grid5 .c.col3.m{--k:#88d6f2;--k2:#2fa9d6}.tkp .tk .grid5 .c.col4.m{--k:#3faed7;--k2:#128a3e}
+.tkp .tk .grid5 .c.m.w{box-shadow:inset 0 0 0 .16em #d1e0f0,0 0 0 .14em #46b5ff,0 0 1em #46b5ff!important}
+/* the free space: a gold tile with a star */
+.tkp .tk .grid5 .c.f{width:100%!important;height:100%!important;aspect-ratio:auto!important;clip-path:none!important;padding:0!important;border-radius:.42em!important;background:radial-gradient(circle at 50% 40%,#002239,#00111c)!important;box-shadow:inset 0 0 0 1px #57bcff66!important;position:relative}
+.tkp .tk .grid5 .c.f::before{content:"★";position:absolute;inset:0;display:grid;place-items:center;font-size:clamp(12px,1.35em,22px);color:#57bcff;text-shadow:0 0 .5em #28a9ff}
+.tkp .tk .grid5 .c.f.w{box-shadow:0 0 0 .14em #46b5ff,0 0 1em #46b5ff!important}
+.tkp .tk .grid5 .c.need{box-shadow:inset 0 0 0 .14em #46b5ff,0 0 .7em #46b5ff77}
+.noguide .tkp .tk .grid5 .c.need{box-shadow:inset 0 0 0 1px #ffffff10}
+@media(min-width:900px){
+ .tkp .tk{padding:.35em .45em .45em!important}
+ .tkh{font-size:.68em}
+}
+@media(max-width:899px){
+ .tkp .tk{padding:.4em .45em .45em!important}
+ .tkh{font-size:clamp(10px,2.8vw,13px)}
+ .tkp .tk:only-child .tkh{font-size:14px}
+}
+
+/*
+ * Phone, playing: the machine and all the player's cards fit on one screen. The machine keeps the
+ * full width (trimmed just under the holes) and only shrinks, down to 80%, on very short screens;
+ * the cards panel takes exactly the height that is left and the cells share it.
+ */
+@media(max-width:599px){
+ .arena.playing{--hw:min(calc(100vw - 24px),520px);--hh:clamp(calc(var(--hw) * .8),calc(100svh - 382px),var(--hw))}
+ .arena.playing .hero{width:var(--hh)!important;height:var(--hh)!important;max-width:100%;aspect-ratio:auto!important;align-self:center;margin-top:-4px}
+ .arena.playing .tkp{height:calc(100svh - var(--hh) - 88px);min-height:280px;display:flex;flex-direction:column;padding:.45em .5em .5em!important;margin-top:-4px}
+ .arena.playing .tkp .tabs{flex:none;margin-bottom:.7em!important;gap:.3em!important}
+ .arena.playing .tkp .tab{padding:.2em .1em!important;font-size:.68em!important;line-height:1.15}
+ .arena.playing .tkp .tab.all{width:2.8em!important}
+ .arena.playing .tkp .dots{margin-top:.15em}
+ .arena.playing .tkp .frame{flex:1;min-height:0!important;height:auto!important;display:flex;flex-direction:column;padding:.75em .35em .35em!important}
+ .arena.playing .tkp .tickets{flex:1;min-height:0;height:auto!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:minmax(0,1fr);gap:.35em!important}
+ .arena.playing .tkp .tickets:has(>.tk:only-child){grid-template-columns:minmax(0,1fr)}
+ .arena.playing .tkp .tk{min-height:0!important;max-width:none!important;padding:.25em .3em .3em!important;gap:.2em;display:flex;flex-direction:column}
+ .arena.playing .tkp .tkh{font-size:clamp(9px,min(2.6vw,1.45svh),12px)}
+ .arena.playing .tkp .tk .grid5{flex:1;min-height:0;grid-template-rows:auto repeat(5,minmax(0,1fr));gap:.14em!important;font-size:clamp(10px,min(3.4vw,1.85svh),15px)!important}
+ .arena.playing .tkp .tk .grid5 .c{height:auto!important;min-height:0!important}
+ .arena.playing .tkp .tk .grid5 .c.m,.arena.playing .tkp .tk .grid5 .c.f{height:100%!important}
+ .arena.playing .tkp .tk .grid5 .hd{font-size:.7em!important;line-height:1.35!important}
+ .arena.playing .tkp .tk:only-child .grid5{font-size:clamp(13px,min(4.6vw,2.6svh),20px)!important}
+}
+/* short phones: the card headers go (the tabs above still show each card's progress) so the numbers keep their size */
+@media(max-width:599px) and (max-height:680px){
+ .arena.playing .tkp .tk:not(:only-child) .tkh{display:none}
+}
+/* Phone: a called number is a plain coloured tile, without the ring and the gloss. */
+@media(max-width:599px){
+ .tkp .tk .grid5 .c.m::before,.tkp .tk .grid5 .c.m::after{display:none!important}
+ .tkp .tk .grid5 .c.m{box-shadow:none!important;text-shadow:none}
+ .tkp .tk .grid5 .c.m.w{box-shadow:inset 0 0 0 .14em #d1e0f0,0 0 0 .12em #46b5ff!important}
+}
