@@ -1,8 +1,7 @@
-import { CircleHelp } from 'lucide-react'
 import { KIND_LABEL, posterUrl, thumbUrl, type Game } from '../games'
 
-/** One game tile: poster art (click to play) and a How to play button under it that opens the game's tour. */
-export function GameCard({ game, onPlay, onLearn }: { game: Game; onPlay: (id: string) => void; onLearn: (id: string) => void }) {
+/** One square game tile: the poster art, click to play. How to play lives in the game header and on the Help page. */
+export function GameCard({ game, onPlay }: { game: Game; onPlay: (id: string) => void }) {
   return (
     <article className="game">
       <button className="art" onClick={() => onPlay(game.id)} aria-label={`Play ${game.name}`}>
@@ -17,12 +16,6 @@ export function GameCard({ game, onPlay, onLearn }: { game: Game; onPlay: (id: s
         {game.isNew && <span className="ribbon">NEW</span>}
         <span className={'kind ' + game.kind}>{KIND_LABEL[game.kind]}</span>
       </button>
-      <div className="game-foot">
-        <span className="game-name">{game.name}</span>
-        <button className="htp-card" onClick={() => onLearn(game.id)} aria-label={`How to play ${game.name}`}>
-          <CircleHelp aria-hidden="true" /> How to play
-        </button>
-      </div>
     </article>
   )
 }

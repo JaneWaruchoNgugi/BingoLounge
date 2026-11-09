@@ -41,7 +41,7 @@ export default function App() {
               </div>
               <div className="grid">
                 {shown.map(g => (
-                  <GameCard key={g.id} game={g} onPlay={go} onLearn={setLearning} />
+                  <GameCard key={g.id} game={g} onPlay={go} />
                 ))}
               </div>
             </section>
