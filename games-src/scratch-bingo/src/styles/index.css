@@ -1,0 +1,3 @@
+@import './base.css';
+/* phone layouts, added after the first release so the whole game fits one phone screen */
+@import './phones.css';
