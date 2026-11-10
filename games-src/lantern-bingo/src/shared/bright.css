@@ -1,0 +1,60 @@
+/* Bright lounge theme: vivid purple and gold, from Charles's Catch and Coconut mockups (2026-11-09). */
+.theme-bright {
+  --bg: #1a0a3e;
+  --panel: #2a1162;
+  --panel-2: #3a1c7d;
+  --line: rgba(196, 150, 255, .22);
+  --text: #ffffff;
+  --muted: #c7b5ef;
+  --gold: #f6b928;
+  --gold-2: #d68a0c;
+  --gold-soft: #ffd86b;
+  --gold-ink: #2a1600;
+  --c0: #e8344e;
+  --c1: #2b86e6;
+  --c2: #9b45e0;
+  --c3: #f29e18;
+  --c4: #1fae4a;
+  --cell: #3d1f7c;
+  --cell-ink: #ffffff;
+  background:
+    radial-gradient(70% 40% at 15% 0%, rgba(160, 70, 255, .35), transparent 70%),
+    radial-gradient(60% 40% at 100% 30%, rgba(120, 40, 220, .3), transparent 70%),
+    linear-gradient(180deg, #240c55, #170735 60%, #12062b);
+}
+.theme-bright .panel { background: linear-gradient(180deg, rgba(66, 28, 140, .92), rgba(38, 14, 92, .94)); border: 1.5px solid rgba(190, 130, 255, .35); box-shadow: 0 0 0 1px rgba(0, 0, 0, .2), 0 0 28px rgba(150, 80, 255, .18) inset; }
+.theme-bright .title { font-size: 34px; letter-spacing: 0; }
+.theme-bright .title span { background: linear-gradient(180deg, #ffe58a, #f6b928 55%, #e08a0b); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.theme-bright .tag { padding: 4px 12px; border-radius: 999px; font-size: 11px; background: linear-gradient(180deg, #ffd86b, #f6b928); }
+.theme-bright .letters span { font-size: 15px; box-shadow: inset 0 -3px 0 rgba(0, 0, 0, .18), inset 0 2px 0 rgba(255, 255, 255, .25); }
+.theme-bright .cell { background: linear-gradient(180deg, #46238a, #381b72); box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08); font-weight: 800; }
+.theme-bright .cell.free { background: radial-gradient(circle, #6a4410, #3a240a); color: #ffd86b; text-shadow: 0 0 8px rgba(255, 200, 80, .8); }
+.theme-bright .cell.on { background: color-mix(in srgb, var(--c) 88%, #000); box-shadow: 0 0 10px color-mix(in srgb, var(--c) 60%, transparent); }
+.theme-bright .bcard.deal { background: rgba(20, 6, 50, .35); opacity: .75; }
+.theme-bright .bcard.deal.on { opacity: 1; border: 2px solid var(--gold); box-shadow: 0 0 0 3px rgba(246, 185, 40, .2), 0 0 26px rgba(246, 185, 40, .35); }
+.theme-bright .ladder dd { color: #fff; font-size: 14px; }
+.theme-bright .banner { background: linear-gradient(90deg, rgba(42, 17, 98, .9), rgba(58, 28, 125, .9)); border-color: rgba(190, 130, 255, .3); }
+.theme-bright .gold { background: linear-gradient(180deg, #ffe07a, #f6b928 50%, #e3920f); box-shadow: 0 4px 0 #a8650a, 0 8px 20px rgba(246, 185, 40, .3); }
+.theme-bright .gold:active { transform: translateY(2px); box-shadow: 0 2px 0 #a8650a; }
+.theme-bright .bar { background: rgba(26, 10, 62, .97); border-top-color: rgba(190, 130, 255, .25); }
+.theme-bright .bar .gold.start { flex: 1; max-width: 420px; justify-content: center; }
+
+
+/* In-field HUD (time left, counters) */
+.theme-bright .field-panel .field-head, .theme-bright .field-panel .chips { display: none; }
+.theme-bright .field-panel { padding: 10px; }
+.hud { position: absolute; top: 10px; left: 10px; right: 10px; display: flex; justify-content: space-between; gap: 8px; pointer-events: none; z-index: 2; }
+.hud-box { display: flex; align-items: center; gap: 10px; padding: 8px 14px 8px 10px; border-radius: 14px; background: rgba(28, 9, 70, .82); border: 1px solid rgba(190, 130, 255, .3); box-shadow: 0 6px 18px rgba(0, 0, 0, .25); }
+.hud-box small { display: block; font-size: 11px; color: #ffd86b; font-weight: 600; line-height: 1.1; }
+.hud-box b { display: block; font-size: 22px; line-height: 1.05; font-variant-numeric: tabular-nums; font-weight: 800; }
+.hud-box.right small { color: #e9dcff; }
+.hud-ico { width: 30px; height: 30px; flex-shrink: 0; }
+.hud-sub { position: absolute; left: 50%; top: 82px; transform: translateX(-50%); z-index: 2; display: flex; gap: 8px; pointer-events: none; }
+.hud-sub span { padding: 3px 10px; border-radius: 999px; background: rgba(28, 9, 70, .75); font-size: 12px; font-weight: 700; color: #e9dcff; white-space: nowrap; }
+.hud-sub span:first-child { color: #ffd86b; }
+@media (max-width: 420px) { .hud-box { padding: 6px 10px 6px 8px; gap: 8px; } .hud-box b { font-size: 18px; } .hud-ico { width: 24px; height: 24px; } }
+.theme-bright .ticket-row { justify-content: flex-start; gap: 10px; }
+.theme-bright .ticket-row .help-btn { margin-left: auto; flex-shrink: 0; }
+.title-icon { width: 46px; height: 46px; flex-shrink: 0; filter: drop-shadow(0 4px 6px rgba(0, 0, 0, .35)); }
+@media (max-width: 420px) { .theme-bright .title { font-size: 27px; } .title-icon { width: 38px; height: 38px; } }
+.theme-bright .meta .stake { padding: 5px 14px; border-radius: 999px; border: 1px solid rgba(190, 130, 255, .35); background: rgba(20, 6, 50, .35); color: #fff; font-weight: 600; font-size: 13px; }

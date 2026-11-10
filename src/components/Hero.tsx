@@ -10,6 +10,9 @@ interface Slide {
 
 const SLIDES: Slide[] = [
   { img: imgUrl('hero-new-player.webp'), alt: 'New player offer: 100% bonus up to KSh 1,000. Join now.', to: 'promotions' },
+  { img: posterUrl('coconut-crack-bingo'), alt: 'Coconut Crack Bingo: crack the coconuts and complete your card. Play now.', to: 'coconut-crack-bingo' },
+  { img: posterUrl('lantern-bingo'), alt: 'Lantern Bingo: light the lanterns and complete your card. Play now.', to: 'lantern-bingo' },
+  { img: posterUrl('catch-bingo'), alt: 'Catch Bingo: catch the balls and complete your card. Play now.', to: 'catch-bingo' },
   { img: posterUrl('scratch-bingo'), alt: 'Scratch Bingo: scratch, reveal, win. Play now.', to: 'scratch-bingo' },
   { img: posterUrl('flip-bingo'), alt: 'Flip Bingo: flip ice tiles to call your own numbers. Play now.', to: 'flip-bingo' },
   { img: posterUrl('reel-bingo'), alt: 'Reel Bingo: spin the reels and complete your numbers. Play now.', to: 'reel-bingo' },

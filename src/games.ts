@@ -16,6 +16,33 @@ export const KIND_LABEL: Record<Kind, string> = { live: 'Live draw', instant: 'I
 
 export const GAMES: Game[] = [
   {
+    id: 'coconut-crack-bingo',
+    poster: true,
+    name: 'Coconut Crack Bingo',
+    kind: 'instant',
+    isNew: true,
+    blurb: 'Crack 30 coconuts on the beach before the 2-minute clock runs out. A rare milk coconut doubles your next line.',
+    facts: ['75-ball', '30 calls', '1–2 cards', 'KSh 10–100'],
+  },
+  {
+    id: 'catch-bingo',
+    poster: true,
+    name: 'Catch Bingo',
+    kind: 'instant',
+    isNew: true,
+    blurb: 'Slide the basket to catch falling numbered balls. Every ball you catch is called; the ones you miss are lost.',
+    facts: ['75-ball', '45 balls', '1–2 cards', 'KSh 10–100'],
+  },
+  {
+    id: 'lantern-bingo',
+    poster: true,
+    name: 'Lantern Bingo',
+    kind: 'instant',
+    isNew: true,
+    blurb: 'Light 30 lanterns over the night lake to call your numbers. Three of one colour in a row opens a bonus pick.',
+    facts: ['75-ball', '30 calls', '1–2 cards', 'Bonus pick'],
+  },
+  {
     id: 'scratch-bingo',
     poster: true,
     name: 'Scratch Bingo',

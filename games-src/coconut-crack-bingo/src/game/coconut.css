@@ -1,0 +1,47 @@
+/* Coconut Crack: beach stage after Charles's "Beach Reveal" mockup (2026-11-09). */
+.coco-field.field { height: clamp(470px, 74vh, 620px); background: #d9a964; border: 2px solid rgba(255, 216, 107, .35); }
+@media (min-width: 900px) { .coco-field.field { height: clamp(520px, calc(100vh - 230px), 700px); } }
+.coco-field .beach { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.coco-field .hud b.low { color: #ff8a7a; }
+
+.coco-grid { position: absolute; inset: 33% 9% 6%; display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(6, 1fr); place-items: center; }
+.coco { position: relative; height: min(64px, 90%); width: auto; aspect-ratio: 1; border: 0; padding: 0; border-radius: 50% 50% 47% 47%; display: grid; place-items: center; }
+.coco.shell {
+  background:
+    radial-gradient(circle at 32% 26%, rgba(255, 220, 170, .5), transparent 32%),
+    repeating-linear-gradient(100deg, rgba(40, 18, 4, .22) 0 1.5px, transparent 1.5px 5px),
+    radial-gradient(circle at 50% 55%, #9a6332, #5a3416 72%, #3a200b);
+  box-shadow: inset -5px -7px 0 rgba(0, 0, 0, .25), 0 8px 6px -3px rgba(90, 55, 20, .45);
+  animation: wobble 3.2s ease-in-out infinite;
+}
+.coco.shell:not(:disabled):hover { filter: brightness(1.12); }
+.coco.shell:disabled { cursor: default; animation: none; }
+@keyframes wobble { 0%, 86%, 100% { transform: rotate(0); } 90% { transform: rotate(-4deg); } 95% { transform: rotate(3deg); } }
+.coco .eyes { position: absolute; top: 24%; left: 50%; width: 38%; height: 20%; transform: translateX(-50%); background:
+  radial-gradient(circle at 20% 40%, #1d0f05 0 22%, transparent 24%),
+  radial-gradient(circle at 80% 40%, #1d0f05 0 22%, transparent 24%),
+  radial-gradient(circle at 50% 95%, #1d0f05 0 20%, transparent 24%); }
+.coco .split { position: absolute; left: 14%; right: 14%; top: 48%; height: 7px; background: #fff3d6; opacity: 0; clip-path: polygon(0 50%, 15% 0, 30% 100%, 45% 0, 60% 100%, 75% 0, 90% 100%, 100% 50%); }
+.coco.cracking { animation: shake .24s linear; }
+.coco.cracking .split { opacity: 1; }
+@keyframes shake { 25% { transform: rotate(-10deg) scale(1.05); } 50% { transform: rotate(9deg) scale(1.1); } 75% { transform: rotate(-5deg); } }
+
+/* opened: golden burst, flying shell bits, white flesh cup with the number */
+.coco.open { height: min(70px, 96%); z-index: 1; }
+.coco.open .rays { position: absolute; inset: -60%; border-radius: 50%; background: repeating-conic-gradient(from 0deg, rgba(255, 214, 100, .75) 0 8deg, transparent 8deg 22deg); -webkit-mask: radial-gradient(circle, #000 20%, transparent 70%); mask: radial-gradient(circle, #000 20%, transparent 70%); animation: burst .7s ease-out forwards; pointer-events: none; }
+@keyframes burst { 0% { transform: scale(.3) rotate(0); opacity: 1; } 100% { transform: scale(1.1) rotate(40deg); opacity: 0; } }
+.coco.open .bits i { position: absolute; left: 50%; top: 50%; width: 10px; height: 8px; margin: -4px -5px; border-radius: 3px 6px 2px 5px; background: #6b3d18; box-shadow: inset 2px 2px 0 #fff3d6; opacity: 0; animation: bit .6s ease-out forwards; }
+@keyframes bit { 0% { opacity: 1; transform: rotate(var(--a)) translateY(0) rotate(0); } 100% { opacity: 0; transform: rotate(var(--a)) translateY(-46px) rotate(160deg); } }
+.coco .cup { position: relative; height: 100%; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center;
+  background: radial-gradient(circle at 50% 42%, #ffffff 0 46%, #efe6d2 50% 56%, #7a4a20 58%, #4a2a0e 72%);
+  box-shadow: 0 0 0 2px rgba(255, 220, 140, .6), 0 6px 10px rgba(90, 55, 20, .4); animation: openUp .32s ease-out; }
+@keyframes openUp { from { transform: scale(.6) rotate(-12deg); } }
+.coco .cup b { position: relative; font-family: var(--font-display); font-weight: 800; font-size: clamp(18px, 4.6vw, 26px); line-height: 1; color: #4a1a9a; font-variant-numeric: tabular-nums; }
+.coco .cup b::after { content: ""; position: absolute; left: 50%; bottom: -5px; width: 18px; height: 3px; margin-left: -9px; border-radius: 2px; background: var(--c); }
+.coco.hit .cup { box-shadow: 0 0 0 3px #ffd86b, 0 0 18px 4px rgba(255, 200, 70, .75), 0 6px 10px rgba(90, 55, 20, .4); }
+.coco.milk .cup { background: radial-gradient(circle at 50% 42%, #eef8ff 0 46%, #cfe6f7 50% 56%, #7a4a20 58%, #4a2a0e 72%); }
+.coco.milk::before { content: ""; position: absolute; inset: -30%; border-radius: 50%; background: radial-gradient(circle, rgba(207, 230, 247, .8), transparent 65%); animation: splash .9s ease-out forwards; }
+@keyframes splash { from { transform: scale(.3); opacity: 1; } to { opacity: 0; } }
+.coco .milk-tag { position: absolute; bottom: -10px; z-index: 2; white-space: nowrap; font-size: 9px; font-weight: 800; padding: 2px 6px; border-radius: 999px; background: #cfe6f7; color: #173049; }
+@media (min-width: 900px) { .coco { height: min(80px, 88%); } .coco.open { height: min(86px, 94%); } .coco .cup b { font-size: 28px; } }
+@media (min-width: 900px) { .theme-coconut .title { font-size: 28px; } }

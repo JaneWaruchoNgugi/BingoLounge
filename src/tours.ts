@@ -56,7 +56,67 @@ const hallWins: TourStep = {
   body: 'Complete any row, column or diagonal for a Line win. Double and Triple lines pay more, and covering the whole card is the Full House. Winnings are shown at the end of the round. Tap Collect winnings to add them to your balance.',
 }
 
+/** Shared steps for the instant games that buy like Scratch Bingo (Coconut Crack, Catch, Lantern). */
+const instantCards: TourStep = {
+  Icon: Ticket,
+  title: 'Choose your cards',
+  body: 'Choose 1 or 2 cards at the bottom, then tap Pick your cards. Swipe through cards priced KSh 10 to 100, tap Take this card, and approve to buy. Quick buy gets your cards at one price straight away.',
+  tip: 'A dearer card pays bigger prizes: every prize is a multiple of that card\'s price.',
+}
+const instantWins: TourStep = {
+  Icon: Trophy,
+  title: 'How it pays',
+  body: 'On each card the first line pays 1x the card price, then 2x, 4x, 8x and 10x for each further line. A full card pays 500x the card price. Winnings are added when the round ends.',
+}
+
 export const TOURS: Record<string, TourStep[]> = {
+  'coconut-crack-bingo': [
+    { Icon: Target, title: 'The goal', body: 'Crack coconuts on the beach to call your numbers, and complete lines on your bingo cards.' },
+    instantCards,
+    {
+      Icon: Hand,
+      title: 'Crack the coconuts',
+      body: 'Each round has 30 coconuts and 2 minutes on the clock. Tap a coconut to crack it; its number is daubed on your cards if you have it. Any coconut still closed at 0:00 cracks open by itself.',
+    },
+    {
+      Icon: Sparkles,
+      title: 'The milk coconut',
+      body: 'Some rounds hide one milk coconut. After you crack it, the next line you complete pays double.',
+    },
+    instantWins,
+    finish,
+  ],
+
+  'catch-bingo': [
+    { Icon: Target, title: 'The goal', body: 'Catch falling bingo balls in your basket. Every ball you catch is called on your cards.' },
+    instantCards,
+    {
+      Icon: Hand,
+      title: 'Move the basket',
+      body: 'After a 3-second count, 45 numbered balls fall over about 50 seconds. Drag anywhere in the play area, or use the arrow keys, to move the basket. Missed balls are lost.',
+      tip: 'Balls with a gold glow are numbers on your cards, so chase those first.',
+    },
+    instantWins,
+    finish,
+  ],
+
+  'lantern-bingo': [
+    { Icon: Target, title: 'The goal', body: 'Light lanterns over the night lake to call your numbers, and complete lines on your bingo cards.' },
+    instantCards,
+    {
+      Icon: Lightbulb,
+      title: 'Light the lanterns',
+      body: 'Each round has 30 lanterns and 2 minutes on the clock. Tap a lantern to light it and see its number, which is daubed on your cards if you have it. Lanterns still dark at 0:00 light by themselves.',
+    },
+    {
+      Icon: Sparkles,
+      title: 'Colour run bonus',
+      body: 'Each lantern glows amber, rose, blue or jade. Light three of the same colour one after another to open the lantern bonus, then pick one of three lanterns for an extra prize.',
+    },
+    instantWins,
+    finish,
+  ],
+
   'scratch-bingo': [
     { Icon: Target, title: 'The goal', body: 'Scratch off 30 called numbers and match them on your bingo card. Matched numbers and completed lines both pay.' },
     {

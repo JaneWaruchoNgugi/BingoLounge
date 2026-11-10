@@ -1,0 +1,59 @@
+/* Lantern Bingo: night lake after Charles's "Lantern Bingo Lounge at Night" mockup (2026-11-09). */
+.amber { --glow: #ffb648; } .rose { --glow: #ff5fbf; } .blue { --glow: #3fa2ff; } .jade { --glow: #3fdc72; }
+
+/* cards: pale cells and lantern-cap letters */
+.theme-lantern .cell { background: linear-gradient(180deg, #fbf5ff, #e6d8f2); color: #2a1450; box-shadow: inset 0 -2px 0 rgba(80, 40, 140, .18); }
+.theme-lantern .cell.free, .theme-lantern .cell.free.on { background: radial-gradient(circle, #ffd86b, #f0a21c); color: #fff; text-shadow: 0 1px 2px rgba(120, 60, 0, .6); box-shadow: 0 0 10px rgba(246, 185, 40, .5); }
+.theme-lantern .cell.on { color: #fff; box-shadow: 0 0 12px color-mix(in srgb, var(--c) 70%, transparent); }
+.theme-lantern .letters span { position: relative; border-radius: 10px 10px 8px 8px; padding: 6px 0 4px; font-size: 17px; line-height: 1.2;
+  background: radial-gradient(ellipse at 50% 40%, color-mix(in srgb, var(--c) 55%, #fff) 0 20%, var(--c) 70%); box-shadow: 0 0 10px color-mix(in srgb, var(--c) 55%, transparent), inset 0 3px 0 rgba(0, 0, 0, .25), inset 0 -3px 0 rgba(0, 0, 0, .25); text-shadow: 0 1px 2px rgba(0, 0, 0, .4); }
+.theme-lantern .bcard.two .letters span { font-size: 13px; padding: 4px 0 3px; }
+.theme-lantern .bcard.deal .cell { opacity: 1; }
+
+/* play area */
+.lantern-field.field { height: clamp(500px, 76vh, 640px); background: #1a0a44; border: 2px solid rgba(255, 216, 107, .3); }
+@media (min-width: 900px) { .lantern-field.field { height: clamp(540px, calc(100vh - 230px), 720px); } }
+.lantern-field .night { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.lantern-field .hud b.low { color: #ff8a7a; }
+.lantern-ico { display: grid; place-items: center; }
+.lantern-ico .lantern-art { width: 20px; height: 32px; filter: drop-shadow(0 0 6px #ffb648); }
+
+.lantern-field .streak { position: absolute; left: 50%; top: 78px; transform: translateX(-50%); z-index: 2; display: flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 999px; background: rgba(28, 9, 70, .78); border: 1px solid rgba(190, 130, 255, .3); font-size: 12px; font-weight: 700; color: #e9dcff; white-space: nowrap; }
+.lantern-field .streak i { width: 11px; height: 11px; border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, .35); }
+.lantern-field .streak i.on { background: var(--glow); border-color: var(--glow); box-shadow: 0 0 8px var(--glow); }
+@media (max-width: 420px) { .lantern-field .streak { top: 66px; } }
+
+.lantern-field .ropes, .lantern-field .lanterns { position: absolute; inset: 21% 8% 14%; display: grid; }
+.lantern-field .ropes i { border-top: 2px solid #b58a4a; border-radius: 50%; margin: 0 -4%; height: 18px; box-shadow: 0 -1px 0 rgba(255, 220, 140, .25); }
+.lantern-field .lanterns { grid-template-columns: repeat(5, 1fr); place-items: start center; }
+
+.lantern { position: relative; height: 96%; max-height: 120px; aspect-ratio: .6; border: 0; padding: 0; background: none; transform-origin: 50% 0; animation: sway 4.6s ease-in-out infinite alternate; transition: filter .3s; }
+.lantern .lantern-art { width: 100%; height: 100%; display: block; }
+.lantern:not(.lit) { filter: saturate(.9); }
+.lantern:not(:disabled):hover { filter: brightness(1.3); }
+.lantern:disabled { cursor: default; }
+.lantern.lit { filter: drop-shadow(0 0 8px var(--glow)) drop-shadow(0 0 18px color-mix(in srgb, var(--glow) 60%, transparent)); animation: sway 4s ease-in-out infinite alternate, lightUp .6s ease-out; }
+.lantern.hit::after { content: ""; position: absolute; left: 50%; top: 50%; width: 62%; aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; box-shadow: 0 0 0 2.5px #ffd86b, 0 0 14px 3px rgba(255, 216, 107, .8); pointer-events: none; }
+@keyframes sway { from { transform: rotate(-2.5deg); } to { transform: rotate(2.5deg); } }
+@keyframes lightUp { 0% { filter: brightness(2.4) drop-shadow(0 0 22px var(--glow)); transform: translateY(-6px); } 100% { transform: none; } }
+
+.reveal-all { position: absolute; left: 50%; bottom: 3.5%; transform: translateX(-50%); z-index: 2; display: inline-flex; align-items: center; gap: 8px; padding: 11px 28px; border-radius: 999px; font-family: var(--font-display); font-weight: 800; font-size: 19px; color: #ffd86b; background: linear-gradient(180deg, #5a1f9c, #3a0f72); border: 2px solid #f6b928; box-shadow: 0 0 18px rgba(246, 185, 40, .35), 0 6px 14px rgba(0, 0, 0, .35); white-space: nowrap; }
+.reveal-all:active { transform: translate(-50%, 2px); }
+
+.lantern-field .bonus { position: absolute; inset: 0; z-index: 3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 20px; text-align: center; background: rgba(14, 4, 40, .84); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); animation: fadeIn .3s ease-out; }
+@keyframes fadeIn { from { opacity: 0; } }
+.lantern-field .bonus h3 { margin: 0; font-family: var(--font-display); font-size: 30px; color: #ffd86b; text-shadow: 0 0 18px rgba(246, 185, 40, .6); }
+.lantern-field .bonus p { margin: 0; max-width: 28ch; line-height: 1.4; }
+.lantern-field .bonus-row { display: flex; gap: 22px; align-items: center; }
+.lantern.big { height: 120px; }
+.lantern.big .bonus-amt { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); padding: 3px 8px; border-radius: 999px; background: #fffaf0; color: #3a1470; font-weight: 900; font-size: 14px; }
+.lantern.big.other { opacity: .45; }
+.lantern.big.chosen { transform: scale(1.12); }
+.lantern-title { display: grid; place-items: center; width: 34px; filter: drop-shadow(0 0 10px #ffb648); }
+.lantern-title .lantern-art { width: 30px; height: 50px; }
+.lantern-field .moon { position: absolute; right: 5%; top: 9%; width: clamp(48px, 12%, 86px); aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 40% 38%, #fff4ea, #f6d6d8 65%, #e3b7c7); box-shadow: 0 0 40px 10px rgba(246, 214, 216, .25); pointer-events: none; }
+.lantern-field .ropes, .lantern-field .lanterns { top: 19%; bottom: 14%; }
+@media (max-width: 899px) { .lantern-field .ropes, .lantern-field .lanterns { top: 21%; bottom: 15%; } }
+/* Narrow phones: lanterns get thin, so widen the tap area to the whole column without changing the art. */
+.lantern::before { content: ""; position: absolute; inset: -4% -40%; }
+@media (max-width: 380px) { .lantern-field .streak { top: 58px; } }
