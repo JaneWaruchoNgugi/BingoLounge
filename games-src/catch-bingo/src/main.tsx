@@ -2,6 +2,7 @@ import './shared/shell.css';
 import './shared/bright.css';
 import './game/catch.css';
 import { mount } from './shared/Shell';
+import { catchSound } from './game/sound';
 import { numberTokens } from './shared/engine';
 import { CatchField } from './game/CatchField';
 
@@ -16,6 +17,7 @@ mount({
     'Every ball you catch is called on your cards. Balls with a gold glow are numbers on your cards, so chase those first. Missed balls are lost.',
   ],
   makeTokens: (calls) => numberTokens(calls),
+  sound: catchSound,
   Field: CatchField,
   revealAllLabel: false,
   calls: 45,

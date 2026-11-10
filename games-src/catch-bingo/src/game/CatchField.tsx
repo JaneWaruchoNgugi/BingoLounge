@@ -32,6 +32,14 @@ export function CatchField({ state, reveal, lose }: FieldProps) {
   const live = state.phase === 'playing';
   const total = state.tokens.length || 45;
   const [hud, setHud] = useState({ count: null as number | null, left: live ? COUNTDOWN + (total - 1) * GAP + 2500 : 0, dropped: 0 });
+  // A blip for each count of the 3-2-1 before the balls drop, then one at each of the last ten seconds.
+  useEffect(() => {
+    if (live && hud.count != null && hud.count > 0) sfx.tick();
+  }, [hud.count]);
+  const secLeft = Math.ceil(hud.left / 1000);
+  useEffect(() => {
+    if (live && hud.count == null && secLeft > 0 && secLeft <= 10) sfx.tick();
+  }, [secLeft]);
 
   useEffect(() => {
     const c = canvas.current!;

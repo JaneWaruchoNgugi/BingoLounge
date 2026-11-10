@@ -2,6 +2,7 @@ import './shared/shell.css';
 import './shared/bright.css';
 import './game/coconut.css';
 import { mount } from './shared/Shell';
+import { coconutSound } from './game/sound';
 import { numberTokens } from './shared/engine';
 import { CoconutField } from './game/CoconutField';
 import { CoconutIcon } from './game/art';
@@ -24,6 +25,7 @@ mount({
     }
     return t;
   },
+  sound: coconutSound,
   Field: CoconutField,
   theme: 'bright',
   inlineCards: true,

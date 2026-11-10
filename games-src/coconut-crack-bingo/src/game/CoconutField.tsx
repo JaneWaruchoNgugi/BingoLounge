@@ -23,9 +23,15 @@ export function CoconutField({ state, reveal }: FieldProps) {
   useEffect(() => {
     if (!live) return;
     const start = performance.now();
+    let lastSec = 0;
     const id = window.setInterval(() => {
       const l = ROUND_MS - (performance.now() - start);
       setLeft(l);
+      const sec = Math.ceil(l / 1000);
+      if (sec > 0 && sec <= 10 && sec !== lastSec) {
+        lastSec = sec;
+        sfx.tick();
+      }
       if (l <= 0) {
         window.clearInterval(id);
         const s = stateRef.current;

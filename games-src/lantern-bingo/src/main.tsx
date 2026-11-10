@@ -2,6 +2,7 @@ import './shared/shell.css';
 import './shared/bright.css';
 import './game/lantern.css';
 import { mount } from './shared/Shell';
+import { lanternSound } from './game/sound';
 import { numberTokens } from './shared/engine';
 import { LanternField } from './game/LanternField';
 import { LanternArt } from './game/art';
@@ -16,6 +17,7 @@ mount({
     'Each lantern glows amber, rose, blue or jade. Light three of the same colour one after another to open the lantern bonus, then pick one of three lanterns for an extra prize.',
   ],
   makeTokens: (calls, rng) => numberTokens(calls).map((x) => ({ ...x, tone: Math.floor(rng() * 4) })),
+  sound: lanternSound,
   Field: LanternField,
   theme: 'bright',
   inlineCards: true,

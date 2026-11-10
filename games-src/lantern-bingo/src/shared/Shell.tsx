@@ -1,5 +1,6 @@
 import React, { useEffect, useReducer, useRef, useState } from 'react';
-import { isMuted, setMuted, sfx } from './sfx';
+import { setTheme, sfx, type Theme } from './sfx';
+import { SoundSettings } from './SoundSettings';
 import { createRoot } from 'react-dom/client';
 import { Picker, prizeRow, priceTag } from './Picker';
 import { CardPicker, QUICK_PRICES } from './CardPicker';
@@ -52,6 +53,7 @@ export interface GameDef {
   theme?: 'bright';
   startLabel?: string; // main button when cards are on the main screen
   icon?: React.ReactNode; // small art beside the title
+  sound?: Theme; // the game's own sounds and music
 }
 
 const fmt = (n: number) => 'KSh ' + n.toLocaleString('en-US');
@@ -188,7 +190,6 @@ function Shell({ game }: { game: GameDef }) {
     } catch {}
   }, [game.id]);
 
-  const [mute, setMute] = useState(isMuted());
   const lines = s.lineWins.length;
   const prevLines = useRef(0);
   useEffect(() => {
@@ -196,6 +197,13 @@ function Shell({ game }: { game: GameDef }) {
     else if (s.justDaubed.length) sfx.daub();
     prevLines.current = lines;
   }, [s.justDaubed, lines]);
+  // A start cue when a round begins, and the game's win tune when it ends with a prize.
+  const prevPhase = useRef(s.phase);
+  useEffect(() => {
+    if (s.phase === 'playing' && prevPhase.current !== 'playing') sfx.start();
+    if (s.phase === 'done' && prevPhase.current === 'playing' && totalWin(s) > 0) setTimeout(sfx.win, 350);
+    prevPhase.current = s.phase;
+  }, [s.phase]);
 
   const [picking, setPicking] = useState(false);
   const buyPicks = (picks: CardPick[]) => {
@@ -277,17 +285,7 @@ function Shell({ game }: { game: GameDef }) {
             Bingo Lounge <em>prototype</em>
           </span>
         </div>
-        <button
-          className="ghost sound"
-          aria-label={mute ? 'Turn sound on' : 'Turn sound off'}
-          aria-pressed={!mute}
-          onClick={() => {
-            setMuted(!mute);
-            setMute(!mute);
-          }}
-        >
-          {mute ? 'Sound off' : 'Sound on'}
-        </button>
+        <SoundSettings />
         <div className="balance" aria-label="Practice balance">
           <span>Practice</span>
           <b>{fmt(s.balance)}</b>
@@ -586,6 +584,7 @@ function Shell({ game }: { game: GameDef }) {
 }
 
 export function mount(game: GameDef) {
+  setTheme(game.id, game.sound);
   document.title = `${game.name} Bingo`;
   createRoot(document.getElementById('root')!).render(<Shell game={game} />);
 }
