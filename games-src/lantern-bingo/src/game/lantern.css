@@ -57,3 +57,13 @@
 /* Narrow phones: lanterns get thin, so widen the tap area to the whole column without changing the art. */
 .lantern::before { content: ""; position: absolute; inset: -4% -40%; }
 @media (max-width: 380px) { .lantern-field .streak { top: 58px; } }
+/* Phones (2026-11-13, Charles: lanterns and numbers too small): fill more of the sky with a 6x5 grid,
+   let each lantern take its whole row, and shrink Reveal all into the corner. */
+@media (max-width: 599px) {
+  .lantern-field .ropes, .lantern-field .lanterns { top: 19%; bottom: 10%; left: 2%; right: 2%; }
+  .lantern { height: 100%; max-height: none; }
+  .lantern-field .ropes i { margin: 0 -2%; }
+  .reveal-all { left: auto; right: 3%; bottom: 2%; transform: none; padding: 6px 14px; font-size: 13px; gap: 5px; }
+  .reveal-all svg { width: 16px; height: 16px; }
+  .reveal-all:active { transform: translateY(2px); }
+}

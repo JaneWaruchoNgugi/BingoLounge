@@ -1,0 +1,65 @@
+/* Catch skin (2026-11-13): neon arcade, with near-black navy, electric cyan, hot pink and lime,
+   so it doesn't share the lounge's purple and gold. Loaded after shell.css, bright.css and catch.css. */
+.app.theme-catch {
+  --bg: #060a1f; --panel: #0c1433; --panel-2: #121c44; --line: rgba(34, 230, 255, .22);
+  --text: #f2fbff; --muted: #9fb6d6;
+  --gold: #b6ff3b; --gold-2: #7ee02a; --gold-soft: #d8ff8a; --gold-ink: #0b1a00;
+  --c0: #ff2fa8; --c1: #22c8ff; --c2: #7ee02a; --c3: #ff8a1f; --c4: #8b5cff;
+  --cell: #111a3d; --cell-ink: #f2fbff;
+  --font-display: 'Bungee', 'Baloo 2', system-ui, sans-serif;
+  background:
+    radial-gradient(60% 40% at 10% 0%, rgba(34, 230, 255, .2), transparent 70%),
+    radial-gradient(60% 45% at 100% 30%, rgba(255, 47, 168, .18), transparent 70%),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, .025) 0 1px, transparent 1px 4px),
+    linear-gradient(180deg, #0a1030, #060a1f 55%, #04061a);
+}
+.app.theme-catch .panel { background: linear-gradient(180deg, rgba(14, 24, 62, .94), rgba(8, 12, 36, .96)); border: 1.5px solid rgba(34, 230, 255, .45); box-shadow: 0 0 0 1px rgba(0, 0, 0, .3), 0 0 22px rgba(34, 230, 255, .14), inset 0 0 22px rgba(255, 47, 168, .08); }
+.app.theme-catch .title { font-weight: 400; letter-spacing: .01em; font-size: 28px; color: #f2fbff; text-shadow: 0 0 12px rgba(34, 230, 255, .55); }
+.app.theme-catch .title span { background: none; -webkit-background-clip: border-box; background-clip: border-box; color: #ff2fa8; text-shadow: 0 0 14px rgba(255, 47, 168, .7); }
+.app.theme-catch .tag { background: #22e6ff; color: #04121a; }
+.app.theme-catch .cell { background: linear-gradient(180deg, #14204a, #0e1738); box-shadow: inset 0 0 0 1px rgba(34, 230, 255, .12); }
+.app.theme-catch .cell.on { background: color-mix(in srgb, var(--c) 85%, #000); box-shadow: 0 0 12px color-mix(in srgb, var(--c) 70%, transparent); }
+.app.theme-catch .cell.free, .app.theme-catch .cell.free.on { background: radial-gradient(circle, #ff2fa8, #8a0a55); color: #fff; text-shadow: none; box-shadow: 0 0 12px rgba(255, 47, 168, .55); }
+.app.theme-catch .letters span { font-family: var(--font-display); font-weight: 400; text-shadow: 0 0 6px rgba(255, 255, 255, .4); }
+.app.theme-catch .bcard.deal { background: rgba(0, 4, 16, .35); }
+.app.theme-catch .bcard.deal.on { box-shadow: 0 0 0 3px rgba(182, 255, 59, .2), 0 0 26px rgba(182, 255, 59, .35); }
+.app.theme-catch .banner { background: linear-gradient(90deg, rgba(10, 18, 50, .92), rgba(28, 10, 46, .92)); border-color: rgba(255, 47, 168, .4); }
+/* main buttons: lime arcade buttons */
+.app.theme-catch .gold, .app.theme-catch .cnt label.on { background: linear-gradient(180deg, #e2ff9a, #b6ff3b 50%, #7ee02a); color: #0b1a00; }
+.app.theme-catch .gold { font-family: var(--font-display); font-weight: 400; box-shadow: 0 4px 0 #3f7a08, 0 0 22px rgba(182, 255, 59, .35); }
+.app.theme-catch .gold:active { box-shadow: 0 2px 0 #3f7a08; }
+.app.theme-catch .bar { background: rgba(5, 8, 26, .97); border-top-color: rgba(34, 230, 255, .3); }
+.app.theme-catch .hud-box { background: rgba(6, 10, 32, .86); border-color: rgba(34, 230, 255, .45); box-shadow: 0 0 14px rgba(34, 230, 255, .2); }
+.app.theme-catch .hud-box small { color: #22e6ff; }
+.app.theme-catch .hud-box.right small { color: #ff8fd0; }
+.app.theme-catch .hud-box b { font-family: var(--font-display); font-weight: 400; }
+.app.theme-catch .hud-sub span { background: rgba(6, 10, 32, .8); color: #d8f6ff; }
+.app.theme-catch .hud-sub span:first-child { color: #b6ff3b; }
+.app.theme-catch .meta .stake { border-color: rgba(34, 230, 255, .4); background: rgba(0, 4, 16, .35); }
+.app.theme-catch .pick-cta { background: linear-gradient(180deg, #13205a, #0a1030); border-color: #22e6ff; box-shadow: 0 0 22px rgba(34, 230, 255, .3); }
+.app.theme-catch .pick-cta b { color: #22e6ff; font-weight: 400; }
+.app.theme-catch .pick-cta small, .app.theme-catch .sheet ol { color: #cfe6f5; }
+.app.theme-catch .quick button { border-color: rgba(34, 230, 255, .32); }
+.app.theme-catch .quick button small { color: #b6ff3b; }
+.app.theme-catch .catch-field.field { background: #060a24; border: 2px solid rgba(255, 47, 168, .5); box-shadow: 0 0 22px rgba(255, 47, 168, .2); }
+.app.theme-catch .catch-field .countdown b { color: #b6ff3b; text-shadow: 0 0 24px rgba(182, 255, 59, .7); font-weight: 400; }
+.app.theme-catch .catch-field .countdown span { color: #cfe6f5; }
+/* card picker */
+.app.theme-catch .sp { background: radial-gradient(90% 55% at 50% 42%, rgba(34, 120, 255, .35), transparent 70%), linear-gradient(180deg, #0c1640, #060a24 70%, #04061a); }
+.app.theme-catch .sp-card { background: linear-gradient(180deg, #f6fbff, #e2f2ff); color: #0a1430; }
+.app.theme-catch .sp-band { background: linear-gradient(90deg, #ff2fa8, #8b5cff); }
+.app.theme-catch .sp-title b { font-family: var(--font-display); font-weight: 400; color: #22e6ff; }
+.app.theme-catch .sp-band b, .app.theme-catch .sp-lock b, .app.theme-catch .sp-slot.on b { color: #b6ff3b; }
+.app.theme-catch .sp-title small { color: #cfe6f5; }
+.app.theme-catch .sp-badge, .app.theme-catch .sp-rosette { background: radial-gradient(circle at 40% 35%, #e2ff9a, #b6ff3b 60%, #6cc21a); color: #0b1a00; }
+.app.theme-catch .sp-grid span { border-color: #cfe1f5; }
+.app.theme-catch .sp-grid .free { background: radial-gradient(circle, #ff2fa8, #8a0a55); }
+.app.theme-catch .sp-prz { border-top-color: #bcd4ee; }
+.app.theme-catch .sp-prz small { color: #4a6a8e; }
+.app.theme-catch .sp-lock, .app.theme-catch .sp-arrow, .app.theme-catch .sp-take { background: rgba(6, 10, 32, .9); }
+.app.theme-catch .sp-arrow, .app.theme-catch .sp-slot { border-color: rgba(34, 230, 255, .55); }
+.app.theme-catch .sp-take { border-color: #22e6ff; }
+.app.theme-catch .sp-take.on { border-color: #b6ff3b; background: rgba(182, 255, 59, .18); }
+.app.theme-catch .sp-slot { color: #9fb6d6; }
+.app.theme-catch .sp-dots i.on { background: #22e6ff; }
+@media (max-width: 599px) { .app.theme-catch .title { font-size: 20px; } }

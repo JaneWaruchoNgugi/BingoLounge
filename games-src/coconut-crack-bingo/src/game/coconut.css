@@ -45,3 +45,12 @@
 .coco .milk-tag { position: absolute; bottom: -10px; z-index: 2; white-space: nowrap; font-size: 9px; font-weight: 800; padding: 2px 6px; border-radius: 999px; background: #cfe6f7; color: #173049; }
 @media (min-width: 900px) { .coco { height: min(80px, 88%); } .coco.open { height: min(86px, 94%); } .coco .cup b { font-size: 28px; } }
 @media (min-width: 900px) { .theme-coconut .title { font-size: 28px; } }
+/* Phones (2026-11-13, Charles: coconuts too small to tap and read): 6 columns x 5 rows over more of
+   the beach, so each coconut and its number are much bigger. */
+@media (max-width: 599px) {
+  .coco-grid { inset: 24% 2% 2%; grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(5, 1fr); }
+  .coco { height: min(62px, 100%); }
+  .coco.open { height: min(66px, 106%); }
+  .coco .cup b { font-size: clamp(17px, 5.4vw, 24px); }
+  .coco .milk-tag { bottom: -8px; }
+}

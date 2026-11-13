@@ -74,7 +74,15 @@ export function LanternField({ state, reveal, bonus, revealAll }: FieldProps) {
     m.addEventListener('change', on);
     return () => m.removeEventListener('change', on);
   }, []);
-  const cols = wide ? 6 : 5;
+  // Phones get 6 columns x 5 rows and a tighter crop of the art, so lanterns and numbers are bigger.
+  const [phone, setPhone] = useState(() => window.matchMedia('(max-width: 599px)').matches);
+  useEffect(() => {
+    const m = window.matchMedia('(max-width: 599px)');
+    const on = () => setPhone(m.matches);
+    m.addEventListener('change', on);
+    return () => m.removeEventListener('change', on);
+  }, []);
+  const cols = wide || phone ? 6 : 5;
   const rows = Math.ceil(tokens.length / cols);
 
   const light = (i: number) => {
@@ -137,7 +145,7 @@ export function LanternField({ state, reveal, bonus, revealAll }: FieldProps) {
               aria-label={on ? `${TONE_LABEL[t.tone!]} lantern, ${t.n}` : 'Unlit lantern'}
               onClick={() => light(t.i)}
             >
-              <LanternArt tone={t.tone!} lit={on} n={t.n} />
+              <LanternArt tone={t.tone!} lit={on} n={t.n} tight={phone} />
             </button>
           );
         })}

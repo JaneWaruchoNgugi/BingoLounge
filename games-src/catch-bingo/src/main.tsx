@@ -1,10 +1,17 @@
 import './shared/shell.css';
 import './shared/bright.css';
 import './game/catch.css';
+import './game/skin.css';
 import { mount } from './shared/Shell';
 import { catchSound } from './game/sound';
 import { numberTokens } from './shared/engine';
 import { CatchField } from './game/CatchField';
+
+// This game's own display font, so its look differs from the other lounge games.
+const font = document.createElement('link');
+font.rel = 'stylesheet';
+font.href = 'https://fonts.googleapis.com/css2?family=Bungee&display=swap';
+document.head.appendChild(font);
 
 mount({
   id: 'catch',

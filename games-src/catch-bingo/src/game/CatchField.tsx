@@ -5,11 +5,11 @@ import { sfx } from '../shared/sfx';
 
 // Ball shells follow the card's column colours: B red, I blue, N purple, G orange, O green.
 const SHELL = [
-  ['#ff7a8c', '#e8344e', '#8e1229'],
-  ['#7cc0ff', '#2b86e6', '#11468f'],
-  ['#c98cff', '#9b45e0', '#55168f'],
-  ['#ffd27a', '#f29e18', '#9a5704'],
-  ['#7fe39b', '#1fae4a', '#0b5f25'],
+  ['#ff8fd0', '#ff2fa8', '#8a0a55'],
+  ['#9ae9ff', '#22c8ff', '#0a5a86'],
+  ['#d4ff8a', '#7ee02a', '#2f6a06'],
+  ['#ffc78a', '#ff8a1f', '#8a3a00'],
+  ['#c6b0ff', '#8b5cff', '#3a1a94'],
 ];
 const GAP = 950; // ms between drops
 const COUNTDOWN = 3000;
@@ -80,7 +80,7 @@ export function CatchField({ state, reveal, lose }: FieldProps) {
       ctx.save();
       ctx.globalAlpha = alpha;
       // soft shadow / gold glow for numbers on your cards
-      ctx.shadowColor = hit ? 'rgba(255, 205, 70, .95)' : 'rgba(0,0,0,.45)';
+      ctx.shadowColor = hit ? 'rgba(182, 255, 59, .95)' : 'rgba(0,0,0,.45)';
       ctx.shadowBlur = hit ? 22 : 10;
       ctx.shadowOffsetY = hit ? 0 : 4;
       const g = ctx.createRadialGradient(x - r * 0.35, y - r * 0.4, r * 0.1, x, y, r);
@@ -94,7 +94,7 @@ export function CatchField({ state, reveal, lose }: FieldProps) {
       ctx.shadowBlur = 0;
       ctx.shadowOffsetY = 0;
       if (hit) {
-        ctx.strokeStyle = '#ffd86b';
+        ctx.strokeStyle = '#b6ff3b';
         ctx.lineWidth = 3;
         ctx.beginPath();
         ctx.arc(x, y, r + 2.5, 0, Math.PI * 2);
@@ -130,13 +130,13 @@ export function CatchField({ state, reveal, lose }: FieldProps) {
       // floor glow + pedestal ring under the basket
       ctx.save();
       const fg = ctx.createRadialGradient(bx, rimY + bh + 6, 4, bx, rimY + bh + 6, bw * 0.9);
-      fg.addColorStop(0, 'rgba(255, 200, 90, .45)');
-      fg.addColorStop(1, 'rgba(255, 200, 90, 0)');
+      fg.addColorStop(0, 'rgba(34, 230, 255, .45)');
+      fg.addColorStop(1, 'rgba(34, 230, 255, 0)');
       ctx.fillStyle = fg;
       ctx.beginPath();
       ctx.ellipse(bx, rimY + bh + 6, bw * 0.9, bw * 0.16, 0, 0, Math.PI * 2);
       ctx.fill();
-      ctx.strokeStyle = 'rgba(205, 150, 255, .7)';
+      ctx.strokeStyle = 'rgba(255, 47, 168, .8)';
       ctx.lineWidth = 2;
       ctx.beginPath();
       ctx.ellipse(bx, rimY + bh + 6, bw * 0.68, bw * 0.1, 0, 0, Math.PI * 2);
@@ -204,9 +204,9 @@ export function CatchField({ state, reveal, lose }: FieldProps) {
 
       // stage
       const sg = ctx.createLinearGradient(0, 0, 0, h);
-      sg.addColorStop(0, '#2c0d6c');
-      sg.addColorStop(0.6, '#230a57');
-      sg.addColorStop(1, '#170640');
+      sg.addColorStop(0, '#060a24');
+      sg.addColorStop(0.6, '#0a1036');
+      sg.addColorStop(1, '#1a0830');
       ctx.fillStyle = sg;
       ctx.fillRect(0, 0, w, h);
       // fan of light rays from the top
@@ -214,7 +214,7 @@ export function CatchField({ state, reveal, lose }: FieldProps) {
       ctx.globalCompositeOperation = 'lighter';
       for (let k = 0; k < 9; k++) {
         const a = -0.9 + k * 0.225 + Math.sin(now / 4000 + k) * 0.03;
-        ctx.fillStyle = `rgba(150, 90, 255, ${k % 2 ? 0.05 : 0.08})`;
+        ctx.fillStyle = `rgba(34, 230, 255, ${k % 2 ? 0.03 : 0.05})`;
         ctx.beginPath();
         ctx.moveTo(w / 2, -20);
         ctx.lineTo(w / 2 + Math.tan(a - 0.06) * h * 1.2, h);
@@ -224,9 +224,9 @@ export function CatchField({ state, reveal, lose }: FieldProps) {
       }
       // spotlight that follows the basket
       const beam = ctx.createLinearGradient(0, 0, 0, rimY);
-      beam.addColorStop(0, 'rgba(120, 170, 255, .0)');
-      beam.addColorStop(0.25, 'rgba(120, 170, 255, .18)');
-      beam.addColorStop(1, 'rgba(160, 200, 255, .32)');
+      beam.addColorStop(0, 'rgba(34, 230, 255, .0)');
+      beam.addColorStop(0.25, 'rgba(34, 230, 255, .14)');
+      beam.addColorStop(1, 'rgba(120, 245, 255, .3)');
       ctx.fillStyle = beam;
       ctx.beginPath();
       ctx.moveTo(bx - 16, 0);
@@ -252,13 +252,44 @@ export function CatchField({ state, reveal, lose }: FieldProps) {
         s.y -= (s.v * dt) / 1000;
         if (s.y < -0.02) s.y = 1.02;
         const tw = 0.35 + 0.65 * Math.abs(Math.sin(now / 600 + s.p));
-        ctx.fillStyle = `rgba(255, 220, 140, ${0.55 * tw})`;
+        ctx.fillStyle = `rgba(150, 245, 255, ${0.55 * tw})`;
         ctx.beginPath();
         ctx.arc(s.x * w, s.y * h, s.s, 0, Math.PI * 2);
         ctx.fill();
       }
+      // neon arcade grid floor scrolling towards the player
+      {
+        const hz = h * 0.6;
+        ctx.save();
+        ctx.strokeStyle = 'rgba(255, 47, 168, .32)';
+        ctx.lineWidth = 1;
+        const off = (now / 1400) % 1;
+        for (let k = 0; k < 9; k++) {
+          const t = (k + off) / 9;
+          const y = hz + (h - hz) * t * t;
+          ctx.globalAlpha = 0.25 + 0.75 * t;
+          ctx.beginPath();
+          ctx.moveTo(0, y);
+          ctx.lineTo(w, y);
+          ctx.stroke();
+        }
+        ctx.globalAlpha = 0.6;
+        for (let k = -8; k <= 8; k++) {
+          ctx.beginPath();
+          ctx.moveTo(w / 2 + k * w * 0.04, hz);
+          ctx.lineTo(w / 2 + k * w * 0.22, h);
+          ctx.stroke();
+        }
+        const hg = ctx.createLinearGradient(0, hz - 30, 0, hz + 4);
+        hg.addColorStop(0, 'rgba(255, 47, 168, 0)');
+        hg.addColorStop(1, 'rgba(255, 47, 168, .35)');
+        ctx.globalAlpha = 1;
+        ctx.fillStyle = hg;
+        ctx.fillRect(0, hz - 30, w, 34);
+        ctx.restore();
+      }
       // stage floor
-      ctx.fillStyle = 'rgba(160, 100, 255, .12)';
+      ctx.fillStyle = 'rgba(34, 230, 255, .1)';
       ctx.beginPath();
       ctx.ellipse(w / 2, h + 10, w * 0.75, 60, 0, 0, Math.PI * 2);
       ctx.fill();
@@ -314,7 +345,7 @@ export function CatchField({ state, reveal, lose }: FieldProps) {
           continue;
         }
         ctx.globalAlpha = 1 - age / 900;
-        ctx.fillStyle = p.hit ? '#ffd86b' : '#ffffff';
+        ctx.fillStyle = p.hit ? '#b6ff3b' : '#ffffff';
         ctx.font = `800 ${p.hit ? 18 : 15}px 'Plus Jakarta Sans', system-ui, sans-serif`;
         ctx.textAlign = 'center';
         ctx.fillText(p.hit ? `${p.text} ✓` : p.text, p.x, p.y - age * 0.05);
@@ -374,9 +405,9 @@ export function CatchField({ state, reveal, lose }: FieldProps) {
       <div className="hud">
         <div className="hud-box">
           <svg className="hud-ico" viewBox="0 0 32 32" aria-hidden="true">
-            <circle cx="16" cy="18" r="11" fill="none" stroke="#f6b928" strokeWidth="3" />
-            <path d="M16 18V12M16 18l4 3" stroke="#f6b928" strokeWidth="2.6" strokeLinecap="round" />
-            <rect x="12" y="2" width="8" height="4" rx="1.5" fill="#f6b928" />
+            <circle cx="16" cy="18" r="11" fill="none" stroke="#22e6ff" strokeWidth="3" />
+            <path d="M16 18V12M16 18l4 3" stroke="#22e6ff" strokeWidth="2.6" strokeLinecap="round" />
+            <rect x="12" y="2" width="8" height="4" rx="1.5" fill="#22e6ff" />
           </svg>
           <div>
             <small>Time left</small>

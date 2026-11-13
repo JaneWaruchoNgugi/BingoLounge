@@ -49,11 +49,11 @@ const Flower = ({ fill }: { fill: string }) => (
 );
 
 /** Paper lantern, 60 x 100. Lit lanterns show the number in the medallion. */
-export function LanternArt({ tone, lit, n }: { tone: number; lit: boolean; n?: number | null }) {
+export function LanternArt({ tone, lit, n, tight }: { tone: number; lit: boolean; n?: number | null; tight?: boolean }) {
   const id = `url(#lt-${lit ? 'l' : 'd'}${tone})`;
   const rib = lit ? 'rgba(120, 50, 0, .28)' : 'rgba(0,0,0,.3)';
   return (
-    <svg viewBox="0 0 60 100" className="lantern-art" aria-hidden="true">
+    <svg viewBox={tight ? '4 8 52 84' : '0 0 60 100'} className="lantern-art" aria-hidden="true">
       <line x1="30" y1="0" x2="30" y2="10" stroke="#c99a3a" strokeWidth="2" />
       <rect x="18" y="9" width="24" height="7" rx="2" fill="url(#lt-gold)" />
       <path d="M14 18 Q 2 50 14 82 L 46 82 Q 58 50 46 18 Z" fill={id} />
@@ -61,8 +61,8 @@ export function LanternArt({ tone, lit, n }: { tone: number; lit: boolean; n?: n
       <path d="M12 26 H48 M10 74 H50" stroke="rgba(255, 220, 140, .55)" strokeWidth="1.5" />
       {lit && n != null ? (
         <>
-          <circle cx="30" cy="50" r="13.5" fill="#fffaf0" stroke="#e9b84a" strokeWidth="1.6" />
-          <text x="30" y="55.5" textAnchor="middle" fontSize={n > 9 ? 15 : 17} fontWeight="900" fill="#5a0f0f" fontFamily="'Plus Jakarta Sans', system-ui, sans-serif">
+          <circle cx="30" cy="50" r={tight ? 20 : 13.5} fill="#fffaf0" stroke="#e9b84a" strokeWidth="1.6" />
+          <text x="30" y={tight ? 58.5 : 55.5} textAnchor="middle" fontSize={tight ? (n > 9 ? 23 : 26) : n > 9 ? 15 : 17} fontWeight="900" fill="#5a0f0f" fontFamily="'Plus Jakarta Sans', system-ui, sans-serif">
             {n}
           </text>
         </>
