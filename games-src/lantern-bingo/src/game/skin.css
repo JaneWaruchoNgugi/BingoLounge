@@ -1,0 +1,66 @@
+/* Lantern skin (2026-11-13): red lacquer, antique gold and an ink-blue night, so it doesn't
+   share the lounge's purple and gold. Loaded after shell.css, bright.css and lantern.css. */
+.app.theme-lantern {
+  --bg: #1a0709; --panel: #3d0c12; --panel-2: #521219; --line: rgba(233, 180, 76, .25);
+  --text: #fff4e2; --muted: #e3c3a2;
+  --gold: #e9b44c; --gold-2: #b8862b; --gold-soft: #f6d58a; --gold-ink: #3a0a05;
+  --c0: #e63946; --c1: #2a9d8f; --c2: #d4a017; --c3: #ee7b3a; --c4: #5a7fc0;
+  --cell: #4a1018; --cell-ink: #fff4e2;
+  --font-display: 'Cinzel', Georgia, serif;
+  background:
+    radial-gradient(70% 40% at 12% 0%, rgba(210, 40, 40, .32), transparent 70%),
+    radial-gradient(60% 45% at 100% 25%, rgba(233, 180, 76, .16), transparent 70%),
+    radial-gradient(circle at 50% 100%, transparent 8px, rgba(233, 180, 76, .05) 9px 10px, transparent 11px) 0 0 / 24px 12px,
+    linear-gradient(180deg, #2c0a0f, #1a0709 55%, #110406);
+}
+.app.theme-lantern .panel { background: linear-gradient(180deg, rgba(96, 18, 26, .94), rgba(54, 10, 16, .96)); border: 1.5px solid rgba(233, 180, 76, .5); box-shadow: inset 0 0 0 4px rgba(0, 0, 0, .18), inset 0 0 0 5px rgba(233, 180, 76, .2); }
+.app.theme-lantern .title { font-weight: 900; letter-spacing: .02em; font-size: 30px; }
+.app.theme-lantern .title span { background: linear-gradient(180deg, #fff1c4, #e9b44c 55%, #b8862b); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.app.theme-lantern .tag { background: linear-gradient(180deg, #f6d58a, #e9b44c); color: var(--gold-ink); }
+.app.theme-lantern .cell { background: linear-gradient(180deg, #fff8ec, #f1e2c8); color: #4a0f12; box-shadow: inset 0 -2px 0 rgba(120, 60, 20, .18); }
+.app.theme-lantern .cell.on { color: #fff; }
+.app.theme-lantern .cell.free, .app.theme-lantern .cell.free.on { background: radial-gradient(circle, #e0402e, #9e1a12); color: #fff4e2; text-shadow: none; box-shadow: 0 0 10px rgba(224, 64, 46, .5); }
+.app.theme-lantern .bcard.deal { background: rgba(20, 4, 6, .35); }
+.app.theme-lantern .bcard.deal.on { box-shadow: 0 0 0 3px rgba(233, 180, 76, .2), 0 0 26px rgba(233, 180, 76, .35); }
+.app.theme-lantern .banner { background: linear-gradient(90deg, rgba(70, 12, 18, .92), rgba(100, 20, 26, .92)); border-color: rgba(233, 180, 76, .35); }
+/* main buttons are vermilion lacquer with gold edges */
+.app.theme-lantern .gold, .app.theme-lantern .cnt label.on { background: linear-gradient(180deg, #ff6a4a, #e0321f 50%, #b01e12); color: #fff4e2; }
+.app.theme-lantern .gold { border: 1px solid rgba(246, 213, 138, .7); box-shadow: 0 4px 0 #6e0d06, 0 8px 20px rgba(224, 50, 31, .35); }
+.app.theme-lantern .gold:active { box-shadow: 0 2px 0 #6e0d06; }
+.app.theme-lantern .bar { background: rgba(26, 6, 9, .97); border-top-color: rgba(233, 180, 76, .3); }
+.app.theme-lantern .hud-box { background: rgba(14, 22, 36, .84); border-color: rgba(233, 180, 76, .35); }
+.app.theme-lantern .hud-box small { color: #f6d58a; }
+.app.theme-lantern .hud-box.right small { color: #f1d9bd; }
+.app.theme-lantern .hud-box b { font-family: var(--font-display); font-weight: 700; }
+.app.theme-lantern .lantern-field .streak { background: rgba(14, 22, 36, .8); }
+.app.theme-lantern .meta .stake { border-color: rgba(233, 180, 76, .4); background: rgba(20, 4, 6, .35); }
+.app.theme-lantern .pick-cta { background: linear-gradient(180deg, #7a1820, #4a0c12); }
+.app.theme-lantern .pick-cta small, .app.theme-lantern .sheet ol { color: #f1d9bd; }
+.app.theme-lantern .quick button { border-color: rgba(233, 180, 76, .32); }
+.app.theme-lantern .letters span { font-family: var(--font-display); }
+/* play area: ink-blue night instead of violet */
+.app.theme-lantern .lantern-field.field { background: #0b1626; border-color: rgba(233, 180, 76, .4); }
+.app.theme-lantern .reveal-all { background: linear-gradient(180deg, #8e1b22, #5a0c12); border-color: #e9b44c; color: #f6d58a; }
+.app.theme-lantern .lantern-field .bonus { background: rgba(8, 14, 24, .86); }
+.app.theme-lantern .lantern-field .bonus h3 { color: #f6d58a; }
+.app.theme-lantern .lantern.big .bonus-amt { color: #5a0f0f; }
+/* card picker */
+.app.theme-lantern .pk-modal { background: radial-gradient(80% 60% at 50% 40%, rgba(110, 20, 28, .72), rgba(14, 3, 5, .93)); }
+.app.theme-lantern .sp-card { background: linear-gradient(180deg, #fffaf0, #f6ead2); color: #4a0f12; }
+.app.theme-lantern .sp-band { background: linear-gradient(90deg, #8e1b22, #c8322a); }
+.app.theme-lantern .sp-title b { font-family: var(--font-display); }
+.app.theme-lantern .sp-title b, .app.theme-lantern .sp-band b, .app.theme-lantern .sp-lock b, .app.theme-lantern .sp-slot.on b { color: #f6d58a; }
+.app.theme-lantern .sp-title small { color: #f1d9bd; }
+.app.theme-lantern .sp-grid span { border-color: #ecd9b5; }
+.app.theme-lantern .sp-prz { border-top-color: #e3cb9f; }
+.app.theme-lantern .sp-prz small { color: #8a5a3a; }
+.app.theme-lantern .sp-lock, .app.theme-lantern .sp-arrow, .app.theme-lantern .sp-take { background: rgba(40, 8, 12, .9); }
+.app.theme-lantern .sp-arrow, .app.theme-lantern .sp-slot { border-color: rgba(246, 213, 138, .55); }
+.app.theme-lantern .sp-take { border-color: #f6d58a; }
+.app.theme-lantern .sp-take.on { border-color: #2fd06a; background: rgba(47, 208, 106, .2); }
+.app.theme-lantern .sp-slot { color: #e3c3a2; }
+.app.theme-lantern .sp-dots i.on { background: #f6d58a; }
+@media (max-width: 599px) { .app.theme-lantern .title { font-size: 19px; } }
+.app.theme-lantern .sp { background: radial-gradient(90% 55% at 50% 42%, rgba(200, 40, 40, .45), transparent 70%), linear-gradient(180deg, #4a0c12, #24060a 70%, #160406); }
+.app.theme-lantern .sp-badge, .app.theme-lantern .sp-rosette { background: radial-gradient(circle at 40% 35%, #ff7a5a, #e0321f 60%, #9e1a12); color: #fff4e2; box-shadow: 0 0 0 3px rgba(246, 213, 138, .55); }
+.app.theme-lantern .sp-grid .free { background: radial-gradient(circle, #e0402e, #9e1a12); }
