@@ -1,11 +1,18 @@
 import './shared/shell.css';
 import './shared/bright.css';
 import './game/lantern.css';
+import './game/skin.css';
 import { mount } from './shared/Shell';
 import { lanternSound } from './game/sound';
 import { numberTokens } from './shared/engine';
 import { LanternField } from './game/LanternField';
 import { LanternArt } from './game/art';
+
+// This game's own display font, so its look differs from the other lounge games.
+const font = document.createElement('link');
+font.rel = 'stylesheet';
+font.href = 'https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap';
+document.head.appendChild(font);
 
 mount({
   id: 'lantern',

@@ -62,7 +62,7 @@ export function LanternArt({ tone, lit, n }: { tone: number; lit: boolean; n?: n
       {lit && n != null ? (
         <>
           <circle cx="30" cy="50" r="13.5" fill="#fffaf0" stroke="#e9b84a" strokeWidth="1.6" />
-          <text x="30" y="55.5" textAnchor="middle" fontSize={n > 9 ? 15 : 17} fontWeight="900" fill="#3a1470" fontFamily="'Plus Jakarta Sans', system-ui, sans-serif">
+          <text x="30" y="55.5" textAnchor="middle" fontSize={n > 9 ? 15 : 17} fontWeight="900" fill="#5a0f0f" fontFamily="'Plus Jakarta Sans', system-ui, sans-serif">
             {n}
           </text>
         </>
@@ -86,7 +86,7 @@ export function NightScene() {
     </g>
   );
   const pagoda = (x: number, flip: boolean) => (
-    <g transform={`translate(${x} 0) scale(${flip ? -1 : 1} 1)`} fill="#1c0b3e">
+    <g transform={`translate(${x} 0) scale(${flip ? -1 : 1} 1)`} fill="#070f19">
       {[0, 1, 2].map((k) => (
         <g key={k}>
           <path d={`M${-36 + k * 6} ${430 - k * 46} Q 0 ${416 - k * 46} ${36 - k * 6} ${430 - k * 46} L ${26 - k * 6} ${436 - k * 46} L ${-26 + k * 6} ${436 - k * 46} Z`} />
@@ -95,16 +95,16 @@ export function NightScene() {
           <rect x={6 - k * 2} y={446 - k * 46} width="6" height="10" fill="#ffb648" opacity=".85" />
         </g>
       ))}
-      <path d="M0 330 V 300" stroke="#1c0b3e" strokeWidth="3" />
+      <path d="M0 330 V 300" stroke="#070f19" strokeWidth="3" />
     </g>
   );
   return (
     <svg className="night" viewBox="0 0 400 600" preserveAspectRatio="none" aria-hidden="true">
       <defs>
         <linearGradient id="nsky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#1a0a44" />
-          <stop offset=".6" stopColor="#3a1670" />
-          <stop offset="1" stopColor="#2a0f58" />
+          <stop offset="0" stopColor="#06111f" />
+          <stop offset=".6" stopColor="#10283c" />
+          <stop offset="1" stopColor="#3a1c26" />
         </linearGradient>
         <radialGradient id="nmoon" cx="40%" cy="40%">
           <stop offset="0" stopColor="#fff4ea" />
@@ -112,12 +112,12 @@ export function NightScene() {
           <stop offset="1" stopColor="#e3b7c7" />
         </radialGradient>
         <linearGradient id="nlake" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#2b1466" />
-          <stop offset="1" stopColor="#120634" />
+          <stop offset="0" stopColor="#0e2232" />
+          <stop offset="1" stopColor="#040b14" />
         </linearGradient>
       </defs>
       <rect width="400" height="600" fill="url(#nsky)" />
-      <path d="M0 470 Q 60 420 120 455 Q 180 425 240 455 Q 300 420 400 460 L 400 520 L 0 520 Z" fill="#251052" />
+      <path d="M0 470 Q 60 420 120 455 Q 180 425 240 455 Q 300 420 400 460 L 400 520 L 0 520 Z" fill="#0a1824" />
       {pagoda(26, false)}
       {pagoda(374, true)}
       <rect y="515" width="400" height="85" fill="url(#nlake)" />

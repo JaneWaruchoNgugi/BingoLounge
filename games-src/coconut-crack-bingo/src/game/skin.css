@@ -1,0 +1,58 @@
+/* Coconut Crack skin (2026-11-13): turquoise lagoon and mango sunset, so it doesn't share the
+   lounge's purple and gold. Loaded after shell.css and bright.css. */
+.app.theme-coconut {
+  --bg: #04303a; --panel: #0a4d58; --panel-2: #0e5f6b; --line: rgba(140, 240, 225, .22);
+  --text: #ffffff; --muted: #a8e2da;
+  --gold: #ffb347; --gold-2: #f07c2a; --gold-soft: #ffd98a; --gold-ink: #3a1600;
+  --c0: #ff5d73; --c1: #22b8f0; --c2: #ffb020; --c3: #b46cff; --c4: #3fc76a;
+  --cell: #0d5562; --cell-ink: #ffffff;
+  --font-display: 'Lilita One', 'Baloo 2', system-ui, sans-serif;
+  background:
+    radial-gradient(70% 40% at 12% 0%, rgba(40, 220, 200, .3), transparent 70%),
+    radial-gradient(60% 45% at 100% 22%, rgba(255, 150, 80, .22), transparent 70%),
+    repeating-linear-gradient(165deg, rgba(255, 255, 255, .025) 0 2px, transparent 2px 26px),
+    linear-gradient(180deg, #06464f, #04303a 55%, #03232b);
+}
+.app.theme-coconut .panel { background: linear-gradient(180deg, rgba(12, 96, 108, .92), rgba(6, 58, 68, .94)); border: 1.5px solid rgba(140, 240, 225, .32); box-shadow: 0 0 0 1px rgba(0, 0, 0, .2), 0 0 28px rgba(60, 220, 200, .12) inset; }
+.app.theme-coconut .title { letter-spacing: .01em; font-weight: 400; }
+.app.theme-coconut .title span { background: linear-gradient(180deg, #fff1a8, #ffb347 55%, #f06a2a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.app.theme-coconut .tag { background: linear-gradient(180deg, #ffd98a, #ffb347); color: var(--gold-ink); }
+.app.theme-coconut .cell { background: linear-gradient(180deg, #116a78, #0b5260); }
+.app.theme-coconut .cell.free { background: radial-gradient(circle at 45% 40%, #9a6332, #5a3416 72%); color: #ffe3a3; text-shadow: none; }
+.app.theme-coconut .cell.on { background: color-mix(in srgb, var(--c) 88%, #000); }
+.app.theme-coconut .bcard.deal { background: rgba(0, 24, 30, .35); }
+.app.theme-coconut .bcard.deal.on { box-shadow: 0 0 0 3px rgba(255, 179, 71, .2), 0 0 26px rgba(255, 179, 71, .35); }
+.app.theme-coconut .banner { background: linear-gradient(90deg, rgba(8, 72, 84, .9), rgba(12, 96, 104, .9)); border-color: rgba(140, 240, 225, .3); }
+.app.theme-coconut .gold, .app.theme-coconut .cnt label.on { background: linear-gradient(180deg, #ffe08a, #ffb347 50%, #f07c2a); color: var(--gold-ink); }
+.app.theme-coconut .gold { box-shadow: 0 4px 0 #a8461a, 0 8px 20px rgba(255, 160, 70, .3); }
+.app.theme-coconut .gold:active { box-shadow: 0 2px 0 #a8461a; }
+.app.theme-coconut .bar { background: rgba(3, 36, 44, .97); border-top-color: rgba(140, 240, 225, .25); }
+.app.theme-coconut .hud-box { background: rgba(4, 48, 58, .84); border-color: rgba(140, 240, 225, .32); }
+.app.theme-coconut .hud-box small { color: #ffd98a; }
+.app.theme-coconut .hud-box.right small, .app.theme-coconut .hud-sub span { color: #d4f6f0; }
+.app.theme-coconut .hud-sub span { background: rgba(4, 48, 58, .78); }
+.app.theme-coconut .hud-sub span:first-child { color: #ffd98a; }
+.app.theme-coconut .meta .stake { border-color: rgba(140, 240, 225, .35); background: rgba(0, 20, 26, .35); }
+.app.theme-coconut .pick-cta { background: linear-gradient(180deg, #0f6e7c, #08414c); }
+.app.theme-coconut .pick-cta small, .app.theme-coconut .sheet ol { color: #d4f1ec; }
+.app.theme-coconut .quick button { border-color: rgba(140, 240, 225, .3); }
+.app.theme-coconut .coco-field.field { border-color: rgba(255, 217, 138, .45); }
+.app.theme-coconut .coco .cup b { color: #0b4a55; }
+/* card picker */
+.app.theme-coconut .pk-modal { background: radial-gradient(80% 60% at 50% 40%, rgba(10, 96, 106, .72), rgba(2, 18, 24, .93)); }
+.app.theme-coconut .sp-card { background: linear-gradient(180deg, #fffaf0, #e3faf5); color: #0b3a42; }
+.app.theme-coconut .sp-band { background: linear-gradient(90deg, #0b6b78, #14a3a0); }
+.app.theme-coconut .sp-title b, .app.theme-coconut .sp-band b, .app.theme-coconut .sp-lock b, .app.theme-coconut .sp-slot.on b { color: #ffd98a; }
+.app.theme-coconut .sp-title small { color: #c9f1ea; }
+.app.theme-coconut .sp-grid span { border-color: #c6ece5; }
+.app.theme-coconut .sp-prz { border-top-color: #b8e4dc; }
+.app.theme-coconut .sp-prz small { color: #3d7f86; }
+.app.theme-coconut .sp-lock, .app.theme-coconut .sp-arrow, .app.theme-coconut .sp-take { background: rgba(4, 40, 48, .9); }
+.app.theme-coconut .sp-arrow, .app.theme-coconut .sp-slot { border-color: rgba(255, 217, 138, .55); }
+.app.theme-coconut .sp-take { border-color: #ffd98a; }
+.app.theme-coconut .sp-take.on { border-color: #2fd06a; background: rgba(47, 208, 106, .2); }
+.app.theme-coconut .sp-slot { color: #a8e2da; }
+.app.theme-coconut .sp-dots i.on { background: #ffd98a; }
+.app.theme-coconut .sp { background: radial-gradient(90% 55% at 50% 42%, rgba(30, 200, 190, .45), transparent 70%), linear-gradient(180deg, #075460, #03323c 70%, #02242c); }
+.app.theme-coconut .sp-badge, .app.theme-coconut .sp-rosette { background: radial-gradient(circle at 40% 35%, #ffe08a, #ffb347 60%, #f07c2a); }
+.app.theme-coconut .sp-grid .free { background: radial-gradient(circle at 45% 40%, #9a6332, #5a3416 72%); color: #ffe3a3; }
